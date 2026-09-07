@@ -137,7 +137,7 @@ def main():
             timeout=900,
         )
     code = container(
-        "cd /work/ros2_ws && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release && source install/setup.bash && python3 /work/tests/sil/test_ros_service.py",
+        "cd /work/ros2_ws && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release && source install/setup.bash && python3 /work/tests/sil/test_ros_service.py",
         [],
         out / "adapter-tests.log",
     )
@@ -183,7 +183,7 @@ def main():
         "source_sha256": start_hashes,
         "allocator_binary_sha256": digest(
             ROOT
-            / "ros2_ws/build/warehouse_fleet_ros/allocator_node"
+            / "ros2_ws/install/warehouse_fleet_ros/lib/warehouse_fleet_ros/allocator_node"
         ),
     }
     (out / "environment.json").write_text(json.dumps(environment, indent=2) + "\n")
