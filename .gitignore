@@ -1,0 +1,8 @@
+/build*/
+/runs/
+/.git-local/
+/.bank-staging/
+__pycache__/
+*.pyc
+
+/.venv/

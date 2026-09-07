@@ -1,0 +1,10 @@
+{
+  "status": "reproduced_and_fixed",
+  "mutation": "remove reserved-endpoint guard from arrive()",
+  "faulty_exit_code": 1,
+  "faulty_error": "fleet: conflicting reservation input: robot=2 other=1 cell=54 time=3",
+  "fixed_completed": 21,
+  "fixed_conflicts": 0,
+  "reproducer": "python3 scripts/reproduce_service_regression.py",
+  "environment": "local C++ Release builds; deliberately mutated copy in TemporaryDirectory"
+}

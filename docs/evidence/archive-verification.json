@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "verified_runs": 360,
+  "source_and_map_hashes": "matched",
+  "oracle": "independent Python frame/task checker"
+}

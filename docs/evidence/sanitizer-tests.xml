@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Linux-c++"
+	tests="2"
+	failures="2"
+	disabled="0"
+	skipped="0"
+	hostname="postedism-ubuntu-system-selfuse"
+	time="29"
+	timestamp="2026-09-06T18:51:34"
+	>
+	<testcase name="core" classname="core" time="26.356" status="fail">
+		<failure message="Failed"/>
+		<properties/>
+		<system-out>==127==LeakSanitizer has encountered a fatal error.
+==127==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==127==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+</system-out>
+	</testcase>
+	<testcase name="integration" classname="integration" time="3.40554" status="fail">
+		<failure message="Failed"/>
+		<properties/>
+		<system-out>F.FF
+======================================================================
+FAIL: test_fault_accounting_and_logs (__main__.Integration.test_fault_accounting_and_logs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warehouse Fleet Autonomy/tests/test_integration.py", line 54, in test_fault_accounting_and_logs
+    r = json.loads(self.run_cli('simulate', '--map', ROOT/'maps/development.map', '--agents', 1, '--ticks', 60, '--faults', faults, '--out', out).stdout)
+                   ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warehouse Fleet Autonomy/tests/test_integration.py", line 15, in run_cli
+    self.assertEqual(r.returncode == 0, ok, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : ==131==LeakSanitizer has encountered a fatal error.
+==131==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==131==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+
+======================================================================
+FAIL: test_paired_workload_and_zero_lambda (__main__.Integration.test_paired_workload_and_zero_lambda)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warehouse Fleet Autonomy/tests/test_integration.py", line 40, in test_paired_workload_and_zero_lambda
+    result = json.loads(self.run_cli('simulate', '--map', ROOT/'maps/development.map', '--agents', 4, '--ticks', 60, '--seed', 91, '--strategy', strategy, '--lambda', 0, '--out', out).stdout)
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warehouse Fleet Autonomy/tests/test_integration.py", line 15, in run_cli
+    self.assertEqual(r.returncode == 0, ok, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : ==152==LeakSanitizer has encountered a fatal error.
+==152==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==152==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+
+======================================================================
+FAIL: test_replay_and_idempotent_output (__main__.Integration.test_replay_and_idempotent_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warehouse Fleet Autonomy/tests/test_integration.py", line 22, in test_replay_and_idempotent_output
+    self.run_cli(*args)
+    ~~~~~~~~~~~~^^^^^^^
+  File "/home/postedism/Desktop/Warehouse Fleet Autonomy/tests/test_integration.py", line 15, in run_cli
+    self.assertEqual(r.returncode == 0, ok, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : ==155==LeakSanitizer has encountered a fatal error.
+==155==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==155==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 3.353s
+
+FAILED (failures=3)
+</system-out>
+	</testcase>
+</testsuite>

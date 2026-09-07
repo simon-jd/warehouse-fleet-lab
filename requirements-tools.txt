@@ -1,0 +1,3 @@
+# Optional plotting only; core build, tests and benchmarks need no Python packages.
+matplotlib==3.10.8
+pillow==12.1.1

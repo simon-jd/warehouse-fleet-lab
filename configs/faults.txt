@@ -1,0 +1,3 @@
+# kind target start duration; closure uses row-major cell index.
+pause 0 40 20
+closure 252 100 20

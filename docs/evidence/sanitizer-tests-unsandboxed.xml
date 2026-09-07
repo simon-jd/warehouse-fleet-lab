@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Linux-c++"
+	tests="3"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname="postedism-ubuntu-system-selfuse"
+	time="25"
+	timestamp="2026-09-06T18:52:57"
+	>
+	<testcase name="core" classname="core" time="21.6692" status="run">
+		<properties/>
+		<system-out>PASS map_boundaries_and_routes
+PASS already_at_target
+PASS disconnected_is_distinct
+PASS vertex_contention
+PASS opposite_edge_rejected_explicitly
+PASS endpoint_held_and_replacement_atomic
+PASS goal_service_waits_for_reserved_endpoint
+PASS planning_window_and_expansion_budget
+PASS wall_clock_deadline
+PASS dynamic_closure_is_not_static_unreachable
+PASS independent_collision_oracle
+PASS hungarian_matches_bruteforce
+PASS empty_queue_ties_and_dummy
+PASS zero_lambda_matches_distance
+PASS one_cell_pickup_delivery
+PASS unavailable_recovery_and_accounting
+PASS bounded_queue_and_no_progress
+PASS seeded_replay_and_randomized_safety
+PASS invalid_config_is_rejected
+19 test cases passed
+</system-out>
+	</testcase>
+	<testcase name="oracle" classname="oracle" time="0.14135" status="run">
+		<properties/>
+		<system-out>.
+----------------------------------------------------------------------
+Ran 1 test in 0.108s
+
+OK
+</system-out>
+	</testcase>
+	<testcase name="integration" classname="integration" time="4.01729" status="run">
+		<properties/>
+		<system-out>....
+----------------------------------------------------------------------
+Ran 4 tests in 3.969s
+
+OK
+</system-out>
+	</testcase>
+</testsuite>

@@ -1,0 +1,35 @@
+{
+  "recorded_at": "2026-09-07T01:57:17.520845+00:00",
+  "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+  "logical_cpus": 32,
+  "cpu_model": "13th Gen Intel(R) Core(TM) i9-13900K",
+  "memory_kib": 129209084,
+  "python": "3.14.4 (main, Jun 18 2026, 14:25:02) [GCC 15.2.0]",
+  "compiler": "c++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "cmake": "cmake version 4.2.3",
+  "binary_sha256": "7396667662a299e44f290139c4a9b21d0e30bb1983aa9266accb25b6194addab",
+  "workers": 1,
+  "execution_mode": "local_discrete_cpu_processes",
+  "config_sha256": "85199840b08f3deca3825e2ecaf56bb2710b829d2edc6e6b6f5d043e263b734c",
+  "command": [
+    "benchmarks/run.py",
+    "--out",
+    "runs/held-out-final"
+  ],
+  "map_sha256": {
+    "open": "dc1f9097d743d0e17444c2571f4c6e26cc0c14a350cf14a5b301a32c64bc58d1",
+    "narrow": "37e937f5ab33c5b85a5eb689eb3d05c3efdf43fb7892c6310aaecb2bb19a4eef",
+    "cross": "46f820a323818fed8f96ac1321b5210d053db829605884a14dafb34f84506d15"
+  },
+  "source_sha256": {
+    "src/event_log.cpp": "840cac475d7af02fa5aeba40a75b20dba7b9fa52328a9456a4017b9913761097",
+    "src/main.cpp": "3a3930be08d9699709839820d2f5386d5f4b14b1b3dae24475da461929e93f09",
+    "src/map.cpp": "88cc5476e910dc388fa76e606e6cbbe4dd26746141393cc4fec08e2e9a501ae3",
+    "src/reservation_planner.cpp": "bbfbea96f2b40fb9dc26c70d99588aa72bd010bcb05e5e22ffe962cec8fd5779",
+    "src/simulator.cpp": "ce810116310d827f29f93d5fbd3ad6e6ff3fc06065c20d2bc59fe452b70d1184",
+    "src/task_allocator.cpp": "0e83cf9f986ad11827438862a4ec81d27a21dc71d85e73598e35cb4598abbce2",
+    "include/fleet/fleet.hpp": "8d109520c055111f16a8e00301bd82b569f71104ea287b3dceb019b268e4de71",
+    "benchmarks/run.py": "9105d897ba945596210a06cdce6dda20364345abcb9a45aac0679ea5bca384b2",
+    "benchmarks/verify.py": "db7e1ac086a870d6f26d32479e3c0e199101d3ac92232e2e58be03ac14abd676"
+  }
+}

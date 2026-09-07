@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "split": "held_out",
+  "frozen_at": "2026-09-06",
+  "maps": ["open", "narrow", "cross"],
+  "agents": [10, 30, 50],
+  "seeds": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+  "strategies": ["nearest", "distance", "congestion", "congestion_zero"],
+  "ticks": 300,
+  "horizon": 64,
+  "max_expansions": 2000,
+  "deadline_us": 0,
+  "arrival_interval": 1,
+  "max_pending": 400,
+  "congestion_window": 16,
+  "lambda": 2.0,
+  "no_progress_ticks": 50,
+  "notes": "Prespecified lambda=2; no held-out tuning. 90 runs per method plus 90 lambda=0 ablations. Simulation is single-threaded; runner defaults to one process at a time."
+}

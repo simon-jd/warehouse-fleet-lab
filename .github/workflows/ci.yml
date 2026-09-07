@@ -1,0 +1,22 @@
+name: C++ planning and simulation checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        sanitize: ['OFF', 'ON']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DFLEET_SANITIZE=${{ matrix.sanitize }}
+      - name: Build
+        run: cmake --build build -j2
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+      - name: Small paired benchmark
+        if: matrix.sanitize == 'OFF'
+        run: python3 benchmarks/run.py --config configs/development.json --out runs/ci-development --timeout 120

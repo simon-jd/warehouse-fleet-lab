@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "split": "development",
+  "maps": ["development"], "agents": [3, 6], "seeds": [1, 2, 3],
+  "strategies": ["nearest", "distance", "congestion", "congestion_zero"],
+  "ticks": 100, "horizon": 32, "max_expansions": 2000, "deadline_us": 0,
+  "arrival_interval": 1, "max_pending": 150, "congestion_window": 16,
+  "lambda": 2.0, "no_progress_ticks": 25,
+  "notes": "Engineering development only. Lambda was prespecified, not selected for reported gain."
+}
