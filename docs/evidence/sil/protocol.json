@@ -1,0 +1,47 @@
+{
+  "seed": 41,
+  "cases": [
+    [
+      "single",
+      1,
+      "none"
+    ],
+    [
+      "three",
+      3,
+      "none"
+    ],
+    [
+      "scan-delay",
+      3,
+      "scan_delay"
+    ],
+    [
+      "actuator-hold",
+      3,
+      "actuator_hold"
+    ],
+    [
+      "controller-restart",
+      3,
+      "nav_restart"
+    ]
+  ],
+  "execution": "sequential, isolated Docker PID/network/Gazebo partitions",
+  "fault_duration_sim_seconds": 4,
+  "scan_delay_sim_seconds": 1,
+  "fault_trigger": "robot1 entry action +2 simulation seconds",
+  "goal_wall_timeout_seconds": 180,
+  "goal_attempts": 3,
+  "episode_wall_timeout_seconds": 900,
+  "min_robot_center_separation_m": 0.48,
+  "min_wall_center_clearance_m": 0.24,
+  "max_delivery_error_m": 0.45,
+  "max_truth_sample_gap_s": 0.15,
+  "limitations": [
+    "One seed per case; qualification examples, not failure-rate estimates.",
+    "SIL, not real hardware or hardware-in-the-loop.",
+    "All Nav2 stacks run concurrently; the transit lease serializes complete missions.",
+    "Physics/DDS/MPPI timing is nondeterministic; fixed seed does not imply byte-identical results."
+  ]
+}

@@ -1,17 +1,19 @@
 # Verification record
 
-Final local source is fingerprinted in the held-out environment manifest and linked by the publication commit. All tests use actual compiled C++ executables. No physical robot, ROS 2, Gazebo, Kubernetes/cloud deployment, GPU workload or production traffic was run.
+Final local source is fingerprinted in the held-out environment manifest and linked by the publication commit. All tests use actual compiled C++ executables. The separate [SIL record](sil-validation.md) covers actual local ROS 2 / Gazebo execution. No physical robot, hardware-in-the-loop device, Kubernetes/cloud deployment, GPU workload or production traffic was run.
 
 | Verification | Result and evidence |
 |---|---|
 | C++20 Release build, warnings-as-errors | GCC 15.2.0, CMake 4.2.3; build succeeded |
-| Release CTest | 3 test programs passed: 22 core cases, 4 CLI integration cases, 1 independent-oracle corruption case; [JUnit](evidence/release-tests.xml), [core output](evidence/core-tests.txt) |
-| ASan + UBSan + LeakSanitizer | Final 3 programs passed outside ptrace sandbox; [JUnit](evidence/sanitizer-tests-final.xml). Original [sandbox failure](evidence/sanitizer-tests.xml) is retained separately |
+| Initial discrete Release CTest | 3 test programs passed: 22 core cases, 4 CLI integration cases, 1 independent-oracle corruption case; [JUnit](evidence/release-tests.xml), [core output](evidence/core-tests.txt) |
+| Initial discrete ASan + UBSan + LeakSanitizer | 3 programs passed outside ptrace sandbox; [JUnit](evidence/sanitizer-tests-final.xml). Original [sandbox failure](evidence/sanitizer-tests.xml) is retained separately |
 | Injected early-service defect | Isolated buggy copy fails with future reservation conflict; fixed seed-91 run completes 21 tasks, no checked collision; [before/after](evidence/service-regression.json) |
 | Paired allocator matrix | See [evaluation](evaluation.md): all successful runs must satisfy independent spatial, state/accounting, same-input and zero-lambda checks |
 | Pause and temporary closure | Both applied, task accounting preserved; [fault analysis](failure-analysis.md) and raw [trace](evidence/recovery/trace.csv) |
 | Published artifact revalidation | `python3 scripts/check_evidence.py` checks source/map and every decompressed artifact hash, then reruns the independent Python oracle; [record](evidence/archive-verification.json) |
 | GitHub Actions | Ubuntu 24.04 workflow runs tests with and without sanitizers and a small paired matrix. Live execution status: [Actions](https://github.com/JDinSeattle/warehouse-fleet-lab/actions). It is separate from the local performance matrix |
+
+The current native suite adds seven adversarial lease/watchdog cases: **34 cases across four CTest programs**, passing in [Release](evidence/sil/release-tests.log) and [ASan/UBSan/LeakSanitizer](evidence/sil/sanitizer-tests.log). Eight additional integration cases exercise the compiled allocator over actual ROS DDS services. Physics validation is documented separately from CI and the discrete 360-run experiment.
 
 ## Commands
 

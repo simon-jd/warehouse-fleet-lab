@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "errors": [],
+  "robots": 1,
+  "fault": "none",
+  "seed": 41,
+  "completed_tasks": 1,
+  "mission_sim_seconds": 30.884999999999998,
+  "wall_seconds": 38.50149447000149,
+  "ground_truth_samples": 1679,
+  "max_ground_truth_gap_seconds": {
+    "1": 0.029999999999997584
+  },
+  "path_length_meters": {
+    "1": 8.15787929398173
+  },
+  "pair_samples": 0,
+  "min_pair_distance_meters": null,
+  "chassis_contact_events": 0,
+  "min_center_to_wall_meters": 0.7346956157449717,
+  "max_delivery_error_meters": 0.0999717394558603,
+  "unauthorized_nonzero_commands": 0,
+  "fault_observations": {},
+  "bag_message_count": 26254
+}

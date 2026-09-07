@@ -1,0 +1,11 @@
+int32[] robot_ids
+int32[] robot_cells
+int32[] task_ids
+int32[] pickups
+int32[] deliveries
+string strategy
+float64 congestion_lambda
+---
+bool accepted
+string error
+warehouse_fleet_ros/Assignment[] assignments

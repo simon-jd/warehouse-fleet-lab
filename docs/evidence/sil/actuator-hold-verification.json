@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "errors": [],
+  "robots": 3,
+  "fault": "actuator_hold",
+  "seed": 41,
+  "completed_tasks": 3,
+  "mission_sim_seconds": 88.914,
+  "wall_seconds": 98.20531551699969,
+  "ground_truth_samples": 13374,
+  "max_ground_truth_gap_seconds": {
+    "1": 0.036000000000001364,
+    "2": 0.036000000000001364,
+    "3": 0.036000000000001364
+  },
+  "path_length_meters": {
+    "1": 7.944751957567135,
+    "2": 6.051289313442897,
+    "3": 8.138226775919733
+  },
+  "pair_samples": 26745,
+  "min_pair_distance_meters": 1.1365045700848904,
+  "chassis_contact_events": 0,
+  "min_center_to_wall_meters": 0.6559610440082381,
+  "max_delivery_error_meters": 0.24860875924943998,
+  "unauthorized_nonzero_commands": 0,
+  "fault_observations": {
+    "observed_duration_seconds": 4.0200000000000005,
+    "zero_command_samples": 60,
+    "settled_hold_drift_meters": 1.3097033276879566e-06
+  },
+  "bag_message_count": 142124
+}

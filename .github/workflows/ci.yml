@@ -1,4 +1,4 @@
-name: C++ planning and simulation checks
+name: C++ planning and ROS adapter checks
 on: [push, pull_request]
 permissions:
   contents: read
@@ -20,3 +20,22 @@ jobs:
       - name: Small paired benchmark
         if: matrix.sanitize == 'OFF'
         run: python3 benchmarks/run.py --config configs/development.json --out runs/ci-development --timeout 120
+  ros-adapter:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Build qualified ROS dependency image
+        run: docker build -t warehouse-fleet:jazzy-sil -f ros2/Dockerfile .
+      - name: Build adapter and test actual DDS service contracts
+        run: |
+          docker run --rm --network none --ulimit core=0 \
+            --mount "type=bind,source=$PWD,target=/work" \
+            warehouse-fleet:jazzy-sil bash -lc '
+              set -e
+              source /opt/ros/jazzy/setup.bash
+              cd /work/ros2_ws
+              colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+              source install/setup.bash
+              python3 /work/tests/sil/test_ros_service.py
+            '

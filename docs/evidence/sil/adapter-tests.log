@@ -1,0 +1,41 @@
+Starting >>> warehouse_fleet_ros
+Finished <<< warehouse_fleet_ros [0.38s]
+
+Summary: 1 package finished [0.45s]
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "valid",
+      "passed": true
+    },
+    {
+      "case": "repeat_valid",
+      "passed": true
+    },
+    {
+      "case": "bad_dimensions",
+      "passed": true
+    },
+    {
+      "case": "duplicate_robot",
+      "passed": true
+    },
+    {
+      "case": "blocked_cell",
+      "passed": true
+    },
+    {
+      "case": "invalid_strategy",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_cost",
+      "passed": true
+    },
+    {
+      "case": "oversized_tasks",
+      "passed": true
+    }
+  ]
+}

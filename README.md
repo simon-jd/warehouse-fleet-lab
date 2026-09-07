@@ -1,12 +1,12 @@
 # Warehouse Fleet Autonomy Lab
 
-A C++20 planning simulator that asks: **does congestion-aware task allocation improve warehouse throughput when the planner and task stream stay fixed?** It models pickup→delivery tasks, concurrent grid motion and bounded reservation planning, with independent collision checks and reproducible experiments.
+A C++20 planning simulator with a ROS 2 / Gazebo execution adapter. The discrete benchmark asks: **does congestion-aware task allocation improve warehouse throughput when the planner and task stream stay fixed?** It models pickup→delivery tasks, concurrent grid motion and bounded reservation planning, with independent collision checks and reproducible experiments.
 
 ![Paired allocator comparison](docs/assets/comparison.png)
 
 ![Three-robot pause and closure replay](docs/assets/recovery.gif)
 
-[Download the MP4 demo](docs/assets/recovery.mp4). The animation is generated from an actual discrete trace. This is a local simulation project; ROS 2/Gazebo integration and physical robots remain future work. Built with coding-agent assistance.
+[Download the MP4 demo](docs/assets/recovery.mp4). The animation is generated from an actual discrete trace. The separate [ROS 2 / Gazebo SIL layer](docs/sil-design.md) runs one or three physical simulated robots through Nav2, with delayed-lidar, actuator-hold and controller-restart tests. Built with coding-agent assistance; no physical hardware was used.
 
 ## Build and reproduce
 
@@ -41,6 +41,16 @@ python3 -m venv .venv
   --demo docs/evidence/recovery --map maps/narrow.map
 ```
 
+## Run ROS 2 / Gazebo qualification
+
+Docker Engine on Linux and Python 3.10+ are required. The command builds the Jazzy/Harmonic dependency image and C++ adapter, exercises actual ROS service contracts, then runs five isolated episodes and a deliberate collision positive control. It retains MCAP bags, generated worlds/configurations, action events and independent verification reports. Use a fresh output path inside this checkout.
+
+```bash
+python3 scripts/sil/qualify.py --out runs/sil/my-qualification
+```
+
+The physics suite runs locally; hosted CI builds the adapter and tests DDS service contracts. [Measured SIL results and artifact replay](docs/sil-validation.md) explain the evidence boundary and reproduction commands.
+
 ## What is implemented
 
 - Deterministic greedy total-service-distance allocation, rectangular Hungarian assignment, and a congestion penalty with a zero-lambda control.
@@ -48,9 +58,11 @@ python3 -m venv .venv
 - Queue/candidate/search budgets, typed planning outcomes, explicit fault epochs, task requeue/cargo retention and no-progress events.
 - JSON metrics/events, trace replay, an independent C++ execution checker and Python artifact oracle; source/binary fingerprints and bounded subprocess experiments.
 - CTest regressions, address/undefined/leak sanitizer verification, GitHub Actions and trace-derived recovery visualization.
+- Typed C++ allocation service, three isolated Nav2/AMCL/TF stacks, feedback-confirmed transit ownership and independent stale-input velocity gates.
+- Actual Gazebo physics/sensor fault cases, controller respawn, MCAP recording and a separate ground-truth/command/contact oracle with a deliberate wall-impact positive control.
 
 [Evaluation and measured results](docs/evaluation.md) · [Architecture and state transitions](docs/design.md) · [Failure analysis](docs/failure-analysis.md) · [Market rationale](docs/market-and-technology.md) · [Upstream compatibility](docs/upstream.md) · [Verification](docs/verification.md) · [中文说明](README.zh-CN.md)
 
 ## Limits
 
-The planner is prioritized and finite-horizon, so collision-free execution does not imply progress or completeness. Congestion scores are approximate; negative results are retained. There is no ROS adapter, continuous-space controller, hardware deployment, production service or ML model in this repository. The evidence describes synthetic workloads on local CPUs and, where separately linked, hosted CI.
+The planner is prioritized and finite-horizon, so collision-free execution does not imply progress or completeness. Congestion scores are approximate; negative results are retained. The SIL adapter conservatively serializes whole missions under one transit lease while all three Nav2 stacks run. It does not implement durable coordinator recovery, general continuous-space multi-agent planning, real hardware/HIL, a production service or an ML model. Discrete 10–50 robot benchmark numbers and 1–3 robot Gazebo qualification are separate evidence scopes; neither implies production safety or throughput.

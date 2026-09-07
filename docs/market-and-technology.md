@@ -35,3 +35,9 @@ Repeated within this small sample: programming/CS fundamentals (3 early-career s
 See [upstream.md](upstream.md) for exact official repository versions, compatibility and migration evidence. This is a new dependency-light C++20 implementation, not a framework upgrade. The kernel uses only the C++ standard library; experiments use Python's standard library. CMake's minimum is 3.20, preserving Ubuntu 24.04 toolchain compatibility without requiring the newest release. Local CMake 4.2.3/GCC 15.2.0 are recorded in each run, and hosted CI supplies a second environment.
 
 The next ROS stage should use Ubuntu 24.04, ROS 2 Jazzy, Gazebo Harmonic and the Jazzy Nav2 line. The local host is Ubuntu 26.04, and ROS 2/Gazebo are not installed. Installing mismatched binaries or claiming waypoint conversion is safe multi-robot execution would not complete that stage. Its acceptance requires a compatible isolated runtime, namespaces/TF/sim clock, action cancellation feedback, conservative resource locks, and actual 1→3 robot runs.
+
+## Authorized SIL follow-up
+
+The user subsequently authorized the simulation execution stage. It now has a separate pinned Ubuntu 24.04/Jazzy/Harmonic Docker runtime, typed C++ allocation, 1–3 Nav2 stacks, conservative lease ownership, fault injection and raw MCAP qualification. See [priorities and design](sil-design.md) and [validation](sil-validation.md). The earlier host/runtime observation describes the starting point, not current implementation status.
+
+The same official early-career JD sample motivates interface correctness, observable recovery and reproducible qualification. This is a domain-focused extension; no new market-wide demand claim or posting-date inference was introduced. The three-robot physical simulation is separate from the 10–50 robot discrete benchmark and from the user's other robotics project.

@@ -1,0 +1,388 @@
+{
+  "scope": "Development findings; not pooled into frozen qualification metrics",
+  "runs": [
+    {
+      "run": "dev1",
+      "classification": "development_not_final_qualification",
+      "note": "Navigation completed, but costmap scan/footprint topics and contact bridge were not yet qualified; excluded.",
+      "runner_or_control_result": {
+        "robots": 1,
+        "fault": "none",
+        "seed": 41,
+        "scope": "local Gazebo Harmonic software-in-the-loop",
+        "passed": true,
+        "mission_start_sim": 3.258,
+        "mission_end_sim": 29.067,
+        "completed_tasks": [
+          1
+        ],
+        "wall_seconds": 33.418082456002594,
+        "topic_counts": {
+          "/robot1/permit": 417,
+          "/robot1/tf_static": 1,
+          "/robot1/cmd_vel": 656,
+          "/robot1/gate/events": 132,
+          "/robot1/imu": 6014,
+          "/clock": 10009,
+          "/robot1/scan_raw": 151,
+          "/robot1/ground_truth/odom": 1431,
+          "/robot1/scan": 151,
+          "/robot1/odom": 835,
+          "/robot1/tf": 1574,
+          "/robot1/amcl_pose": 63,
+          "/robot1/cmd_vel_nav": 1056
+        },
+        "retained_lease_owner": null
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/dev1"
+    },
+    {
+      "run": "dev2",
+      "classification": "development_not_final_qualification",
+      "note": "Single navigation and frame oracle passed after topic fix; contact observation path still unqualified; excluded.",
+      "runner_or_control_result": {
+        "robots": 1,
+        "fault": "none",
+        "seed": 41,
+        "scope": "local Gazebo Harmonic software-in-the-loop",
+        "passed": true,
+        "mission_start_sim": 3.087,
+        "mission_end_sim": 33.612,
+        "completed_tasks": [
+          1
+        ],
+        "wall_seconds": 37.70236128099714,
+        "topic_counts": {
+          "/robot1/permit": 470,
+          "/robot1/tf_static": 1,
+          "/robot1/imu": 6923,
+          "/clock": 11528,
+          "/robot1/scan_raw": 174,
+          "/robot1/ground_truth/odom": 1648,
+          "/robot1/odom": 961,
+          "/robot1/tf": 1811,
+          "/robot1/amcl_pose": 69,
+          "/robot1/cmd_vel": 681,
+          "/robot1/scan": 169,
+          "/robot1/gate/events": 138,
+          "/robot1/cmd_vel_nav": 1248
+        },
+        "retained_lease_owner": null
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/dev2"
+    },
+    {
+      "run": "dev3",
+      "classification": "development_not_final_qualification",
+      "note": "Three tasks completed; westbound yaw caused long settling, and body contact observation path was unqualified; excluded.",
+      "runner_or_control_result": {
+        "robots": 3,
+        "fault": "none",
+        "seed": 41,
+        "scope": "local Gazebo Harmonic software-in-the-loop",
+        "passed": true,
+        "mission_start_sim": 3.141,
+        "mission_end_sim": 169.269,
+        "completed_tasks": [
+          1,
+          2,
+          3
+        ],
+        "wall_seconds": 177.72945967499982,
+        "topic_counts": {
+          "/robot1/permit": 2220,
+          "/robot2/permit": 2220,
+          "/robot3/permit": 2220,
+          "/robot1/tf_static": 1,
+          "/robot2/tf_static": 1,
+          "/robot3/tf_static": 1,
+          "/robot2/cmd_vel": 3517,
+          "/robot2/gate/events": 707,
+          "/robot1/cmd_vel": 3516,
+          "/robot1/gate/events": 706,
+          "/robot3/cmd_vel": 3509,
+          "/robot3/gate/events": 709,
+          "/robot2/imu": 33999,
+          "/clock": 56382,
+          "/robot1/imu": 34001,
+          "/robot3/imu": 33994,
+          "/robot1/scan_raw": 852,
+          "/robot2/scan_raw": 852,
+          "/robot3/scan_raw": 852,
+          "/robot2/scan": 851,
+          "/robot1/ground_truth/odom": 8108,
+          "/robot2/ground_truth/odom": 8108,
+          "/robot3/ground_truth/odom": 8108,
+          "/robot3/scan": 851,
+          "/robot1/odom": 4729,
+          "/robot1/tf": 8918,
+          "/robot2/odom": 4729,
+          "/robot2/tf": 8917,
+          "/robot3/odom": 4729,
+          "/robot3/tf": 8917,
+          "/robot1/scan": 852,
+          "/robot1/amcl_pose": 63,
+          "/robot2/amcl_pose": 151,
+          "/robot3/amcl_pose": 65,
+          "/robot1/cmd_vel_nav": 3939,
+          "/robot2/cmd_vel_nav": 5159,
+          "/robot3/cmd_vel_nav": 1127
+        },
+        "retained_lease_owner": null
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/dev3"
+    },
+    {
+      "run": "contact-dev",
+      "classification": "development_not_final_qualification",
+      "note": "Deliberate wall impact was physically observed as stalled motion but contact bridge subscribed to wrong topic; positive control failed.",
+      "runner_or_control_result": {
+        "clock": 22.353,
+        "contacts": [],
+        "odom_samples": 1064,
+        "first_x": -0.5998129369255621,
+        "last_x": -0.17247997524971367,
+        "passed": false
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/contact-dev"
+    },
+    {
+      "run": "contact-fixed",
+      "classification": "development_not_final_qualification",
+      "note": "Scoped chassis topic repaired, but camera enclosure hit first; positive control failed until camera/lidar links were instrumented.",
+      "runner_or_control_result": {
+        "clock": 22.527,
+        "contacts": [],
+        "odom_samples": 1072,
+        "first_x": -0.5998129369255621,
+        "last_x": -0.17247997524971367,
+        "passed": false
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/contact-fixed"
+    },
+    {
+      "run": "single41",
+      "classification": "development_not_final_qualification",
+      "note": "Startup timed out after missing volatile AMCL initial-pose observation; changed coordinator/recorder to transient-local subscription.",
+      "runner_or_control_result": {
+        "robots": 1,
+        "fault": "none",
+        "seed": 41,
+        "scope": "local Gazebo Harmonic software-in-the-loop",
+        "passed": false,
+        "error": "TimeoutError: robot1 action/localization/sensors ready",
+        "wall_seconds": 121.09341334200144,
+        "topic_counts": {
+          "/robot1/permit": 1507,
+          "/robot1/tf_static": 1,
+          "/robot1/cmd_vel": 2404,
+          "/robot1/gate/events": 481,
+          "/robot1/scan": 584,
+          "/robot1/tf": 6085,
+          "/clock": 38402,
+          "/robot1/imu": 23147,
+          "/robot1/ground_truth/odom": 5522,
+          "/robot1/odom": 3224,
+          "/robot1/scan_raw": 581
+        },
+        "retained_lease_owner": null
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/single41"
+    },
+    {
+      "run": "devscan",
+      "classification": "development_not_final_qualification",
+      "note": "Delayed lidar and acknowledged cancellation/retry completed; development source differs from frozen final suite.",
+      "runner_or_control_result": {
+        "robots": 3,
+        "fault": "scan_delay",
+        "seed": 41,
+        "scope": "local Gazebo Harmonic software-in-the-loop",
+        "passed": true,
+        "mission_start_sim": 3.444,
+        "mission_end_sim": 82.563,
+        "completed_tasks": [
+          1,
+          2,
+          3
+        ],
+        "wall_seconds": 88.85847270199883,
+        "topic_counts": {
+          "/robot1/permit": 1110,
+          "/robot2/permit": 1110,
+          "/robot3/permit": 1110,
+          "/robot2/tf_static": 1,
+          "/robot1/tf_static": 1,
+          "/robot3/tf_static": 1,
+          "/robot1/gate/events": 352,
+          "/robot1/cmd_vel": 1734,
+          "/robot1/imu": 16692,
+          "/robot2/imu": 16692,
+          "/robot3/imu": 16688,
+          "/clock": 27669,
+          "/robot3/cmd_vel": 1723,
+          "/robot3/gate/events": 349,
+          "/robot1/scan_raw": 418,
+          "/robot1/scan": 413,
+          "/robot2/scan_raw": 418,
+          "/robot3/scan_raw": 418,
+          "/robot3/scan": 418,
+          "/robot1/ground_truth/odom": 3979,
+          "/robot2/ground_truth/odom": 3979,
+          "/robot3/ground_truth/odom": 3979,
+          "/robot1/odom": 2321,
+          "/robot1/tf": 4371,
+          "/robot2/odom": 2321,
+          "/robot2/tf": 4376,
+          "/robot3/odom": 2321,
+          "/robot3/tf": 4376,
+          "/robot2/cmd_vel": 1703,
+          "/robot1/amcl_pose": 61,
+          "/robot3/amcl_pose": 64,
+          "/robot2/scan": 417,
+          "/robot2/amcl_pose": 55,
+          "/robot2/gate/events": 342,
+          "/robot1/cmd_vel_nav": 2113,
+          "/robot1/inject_fault": 1,
+          "/robot2/cmd_vel_nav": 1454,
+          "/robot3/cmd_vel_nav": 1106
+        },
+        "retained_lease_owner": null
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/devscan"
+    },
+    {
+      "run": "devsingle2",
+      "classification": "development_not_final_qualification",
+      "note": "Single robot and full body contact positive control passed; superseded by frozen suite.",
+      "runner_or_control_result": {
+        "robots": 1,
+        "fault": "none",
+        "seed": 41,
+        "scope": "local Gazebo Harmonic software-in-the-loop",
+        "passed": true,
+        "mission_start_sim": 3.123,
+        "mission_end_sim": 32.175,
+        "completed_tasks": [
+          1
+        ],
+        "wall_seconds": 36.31869400299911,
+        "topic_counts": {
+          "/robot1/permit": 453,
+          "/robot1/tf_static": 1,
+          "/robot1/tf": 1713,
+          "/robot1/amcl_pose": 66,
+          "/clock": 10770,
+          "/robot1/imu": 6466,
+          "/robot1/ground_truth/odom": 1539,
+          "/robot1/odom": 898,
+          "/robot1/cmd_vel": 647,
+          "/robot1/gate/events": 132,
+          "/robot1/scan_raw": 161,
+          "/robot1/scan": 161,
+          "/robot1/cmd_vel_nav": 1186
+        },
+        "retained_lease_owner": null
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/devsingle2"
+    },
+    {
+      "run": "contact-full",
+      "classification": "development_not_final_qualification",
+      "note": "Camera-to-wall contacts observed in positive control after body coverage fix.",
+      "runner_or_control_result": {
+        "clock": 1.608,
+        "contacts": [
+          {
+            "sim_time": 1.6019999999999999,
+            "a": "robot1::camera_link::collision",
+            "b": "wall_4::wall::collision"
+          },
+          {
+            "sim_time": 1.605,
+            "a": "robot1::camera_link::collision",
+            "b": "wall_4::wall::collision"
+          },
+          {
+            "sim_time": 1.608,
+            "a": "robot1::camera_link::collision",
+            "b": "wall_4::wall::collision"
+          }
+        ],
+        "odom_samples": 76,
+        "first_x": -0.5998129369255621,
+        "last_x": -0.17252787846073064,
+        "passed": true
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/contact-full"
+    },
+    {
+      "run": "devrestart",
+      "classification": "development_not_final_qualification",
+      "note": "Controller killed, respawned and three tasks completed; a transient goal rejection prompted two-snapshot lifecycle readiness.",
+      "runner_or_control_result": {
+        "robots": 3,
+        "fault": "nav_restart",
+        "seed": 41,
+        "scope": "local Gazebo Harmonic software-in-the-loop",
+        "passed": true,
+        "mission_start_sim": 4.065,
+        "mission_end_sim": 92.775,
+        "completed_tasks": [
+          1,
+          2,
+          3
+        ],
+        "wall_seconds": 98.74212400299803,
+        "topic_counts": {
+          "/robot1/permit": 1232,
+          "/robot2/permit": 1232,
+          "/robot3/permit": 1232,
+          "/robot1/tf_static": 1,
+          "/robot3/cmd_vel": 1936,
+          "/robot2/tf_static": 1,
+          "/robot1/gate/events": 390,
+          "/robot1/cmd_vel": 1934,
+          "/robot3/tf_static": 1,
+          "/robot2/cmd_vel": 1932,
+          "/robot3/gate/events": 390,
+          "/robot2/gate/events": 390,
+          "/clock": 31125,
+          "/robot1/imu": 18729,
+          "/robot2/imu": 18728,
+          "/robot3/imu": 18728,
+          "/robot1/scan_raw": 469,
+          "/robot2/scan_raw": 469,
+          "/robot3/scan_raw": 469,
+          "/robot1/scan": 469,
+          "/robot3/scan": 469,
+          "/robot1/ground_truth/odom": 4464,
+          "/robot2/ground_truth/odom": 4464,
+          "/robot3/ground_truth/odom": 4464,
+          "/robot2/scan": 469,
+          "/robot1/odom": 2604,
+          "/robot1/tf": 4909,
+          "/robot2/odom": 2604,
+          "/robot2/tf": 4909,
+          "/robot3/odom": 2604,
+          "/robot3/tf": 4909,
+          "/robot1/amcl_pose": 65,
+          "/robot3/amcl_pose": 64,
+          "/robot2/amcl_pose": 54,
+          "/robot1/cmd_vel_nav": 2276,
+          "/robot2/cmd_vel_nav": 1524,
+          "/robot3/cmd_vel_nav": 1066
+        },
+        "retained_lease_owner": null
+      },
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/devrestart"
+    },
+    {
+      "run": "qualification-41",
+      "classification": "development_not_final_qualification",
+      "note": "Preflight stopped before physics: host hash path followed an absolute /work symlink; corrected to actual build binary path.",
+      "runner_or_control_result": null,
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/qualification-41"
+    }
+  ]
+}
