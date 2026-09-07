@@ -54,3 +54,5 @@ Local runtime reuse: the machine already had a dependency-only Jazzy/Nav2/Gazebo
 See [SIL qualification](sil-validation.md) for commands, measured results and retained artifacts.
 
 Fresh hosted CI exposed an install-mode defect: ament built the internal planning library as shared, but it was not installed; the local symlink install retained a build-tree search path that concealed the omission. The private core is now explicitly static, and qualification uses normal colcon installation. The entire physics suite was rerun against the installed executable.
+
+An observed startup DDS response timeout left a localization lifecycle manager waiting before any mission. The qualifier may recreate the entire isolated world once, only after verifying a readiness timeout, no mission start/resource ownership and zero final commands. Failed attempts are retained and independently replayed; action/fault failures after mission start are never retried by this rule. This is bounded containment, not a fix to the underlying middleware.

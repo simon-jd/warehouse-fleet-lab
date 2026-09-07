@@ -13,7 +13,7 @@ Final local source is fingerprinted in the held-out environment manifest and lin
 | Published artifact revalidation | `python3 scripts/check_evidence.py` checks source/map and every decompressed artifact hash, then reruns the independent Python oracle; [record](evidence/archive-verification.json) |
 | GitHub Actions | Ubuntu 24.04 workflow runs tests with and without sanitizers and a small paired matrix. Live execution status: [Actions](https://github.com/JDinSeattle/warehouse-fleet-lab/actions). It is separate from the local performance matrix |
 
-The current native suite adds seven adversarial lease/watchdog cases: **34 cases across four CTest programs**, passing in [Release](evidence/sil/release-tests.log) and [ASan/UBSan/LeakSanitizer](evidence/sil/sanitizer-tests.log). Eight additional integration cases exercise the compiled allocator over actual ROS DDS services. Physics validation is documented separately from CI and the discrete 360-run experiment.
+The current native suite adds ten adversarial lease/watchdog/startup-retry cases: **37 cases across four CTest programs**, passing in [Release](evidence/sil/release-tests.log) and [ASan/UBSan/LeakSanitizer](evidence/sil/sanitizer-tests.log). Eight additional integration cases exercise the compiled allocator over actual ROS DDS services. Physics validation is documented separately from CI and the discrete 360-run experiment.
 
 ## Commands
 

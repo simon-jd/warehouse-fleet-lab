@@ -1,12 +1,15 @@
 """Adversarial safety-state tests; independent of ROS and wall-clock timing."""
 
+import json
 import math
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts/sil"))
 from protocol import TransitLease, command_allowed
+from qualify import startup_retryable
 
 
 class LeaseTests(unittest.TestCase):
@@ -74,6 +77,54 @@ class GateTests(unittest.TestCase):
     def test_missing_permission_and_actuator_hold_stop(self):
         self.assertFalse(command_allowed(**(self.valid | {"permitted": False})))
         self.assertFalse(command_allowed(**self.valid, hold=True))
+
+
+class StartupRetryTests(unittest.TestCase):
+    def check(self, result, events, command):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)
+            (path / "result.json").write_text(json.dumps(result))
+            (path / "events.jsonl").write_text(
+                "".join(json.dumps(e) + "\n" for e in events)
+            )
+            (path / "telemetry.jsonl").write_text(
+                json.dumps({"topic": "/robot1/cmd_vel", "v": command, "w": 0}) + "\n"
+            )
+            return startup_retryable(path)
+
+    def test_only_stationary_pre_mission_timeout_retries(self):
+        result = {
+            "passed": False,
+            "error": "TimeoutError: robot3 ready",
+            "retained_lease_owner": None,
+        }
+        self.assertTrue(self.check(result, [{"kind": "robot_ready"}], 0))
+
+    def test_motion_or_ownership_cannot_be_erased_by_retry(self):
+        result = {
+            "passed": False,
+            "error": "TimeoutError: robot3 ready",
+            "retained_lease_owner": None,
+        }
+        self.assertFalse(self.check(result, [], 0.01))
+        self.assertFalse(self.check(result | {"retained_lease_owner": 1}, [], 0))
+        self.assertFalse(self.check(result, [{"kind": "lease_acquired"}], 0))
+
+    def test_started_mission_and_non_timeout_failures_do_not_retry(self):
+        result = {
+            "passed": False,
+            "error": "TimeoutError: robot3 ready",
+            "retained_lease_owner": None,
+        }
+        self.assertFalse(self.check(result | {"mission_start_sim": 0.0}, [], 0))
+        self.assertFalse(
+            self.check(result | {"error": "RuntimeError: invalid graph"}, [], 0)
+        )
+        self.assertFalse(
+            self.check(
+                {k: v for k, v in result.items() if k != "retained_lease_owner"}, [], 0
+            )
+        )
 
 
 if __name__ == "__main__":

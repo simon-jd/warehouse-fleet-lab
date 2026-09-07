@@ -34,7 +34,11 @@ def main():
     ]:
         shutil.copyfile(args.suite / name, args.out / name)
     archives = {}
-    for name in [r["case"] for r in summary["cases"]] + ["contact-positive-control"]:
+    directories = [r["case"] for r in summary["cases"]] + ["contact-positive-control"]
+    directories += [
+        r["artifact_directory"] for r in summary.get("startup_failures", [])
+    ]
+    for name in directories:
         target = args.out / (name + ".tar.gz")
         with tarfile.open(target, "x:gz", compresslevel=9) as archive:
             for notice in Path("third_party").iterdir():

@@ -1,13 +1,13 @@
 Test project /home/postedism/Desktop/Warehouse Fleet Autonomy/build-sanitize
     Start 1: core
-1/4 Test #1: core .............................   Passed   24.06 sec
+1/4 Test #1: core .............................   Passed   25.70 sec
     Start 2: oracle
-2/4 Test #2: oracle ...........................   Passed    0.17 sec
+2/4 Test #2: oracle ...........................   Passed    0.21 sec
     Start 3: integration
-3/4 Test #3: integration ......................   Passed    4.77 sec
+3/4 Test #3: integration ......................   Passed    4.94 sec
     Start 4: sil_protocol
-4/4 Test #4: sil_protocol .....................   Passed    0.08 sec
+4/4 Test #4: sil_protocol .....................   Passed    0.06 sec
 
 100% tests passed, 0 tests failed out of 4
 
-Total Test time (real) =  29.08 sec
+Total Test time (real) =  30.91 sec

@@ -26,6 +26,37 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def startup_retryable(episode):
+    """A fresh simulator may retry readiness only before any motion/mission ownership."""
+    try:
+        result = json.loads((episode / "result.json").read_text())
+        events = [
+            json.loads(line)
+            for line in (episode / "events.jsonl").read_text().splitlines()
+        ]
+        telemetry = [
+            json.loads(line)
+            for line in (episode / "telemetry.jsonl").read_text().splitlines()
+        ]
+        return (
+            result.get("passed") is False
+            and "mission_start_sim" not in result
+            and "retained_lease_owner" in result
+            and result.get("retained_lease_owner") is None
+            and isinstance(result.get("error"), str)
+            and result["error"].startswith("TimeoutError: robot")
+            and all(e["kind"] == "robot_ready" for e in events)
+            and any(t["topic"].endswith("/cmd_vel") for t in telemetry)
+            and all(
+                abs(t["v"]) + abs(t["w"]) == 0
+                for t in telemetry
+                if t["topic"].endswith("/cmd_vel")
+            )
+        )
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
+
+
 def source_hashes():
     files = [
         *ROOT.glob("scripts/sil/*.py"),
@@ -114,6 +145,8 @@ def main():
         "goal_wall_timeout_seconds": 180,
         "goal_attempts": 3,
         "episode_wall_timeout_seconds": 900,
+        "startup_attempts_per_case": 2,
+        "startup_retry_condition": "Readiness timeout before mission start; no ownership and zero recorded final velocity. Entire isolated container/world is recreated; failed attempt retained.",
         "min_robot_center_separation_m": 0.48,
         "min_wall_center_clearance_m": 0.24,
         "max_delivery_error_m": 0.45,
@@ -188,6 +221,7 @@ def main():
     }
     (out / "environment.json").write_text(json.dumps(environment, indent=2) + "\n")
     results = []
+    startup_failures = []
     for name, robots, fault in CASES:
         print(f"Running {name}...", flush=True)
         run_code = container(
@@ -204,6 +238,36 @@ def main():
             ],
             out / (name + ".log"),
         )
+        if run_code and startup_retryable(out / name):
+            failed_name = name + "-startup-1"
+            (out / name).rename(out / failed_name)
+            (out / (name + ".log")).rename(out / (failed_name + ".log"))
+            startup_failures.append(
+                {
+                    "case": name,
+                    "attempt": 1,
+                    "artifact_directory": failed_name,
+                    "classification": "pre-mission readiness timeout; no motion; not a completed fault scenario",
+                }
+            )
+            print(
+                f"{name}: retaining startup timeout; one bounded fresh-world retry",
+                flush=True,
+            )
+            run_code = container(
+                'source /work/ros2_ws/install/setup.bash && python3 /work/scripts/sil/run_episode.py "$@"',
+                [
+                    "--out",
+                    inside + "/" + name,
+                    "--robots",
+                    str(robots),
+                    "--fault",
+                    fault,
+                    "--seed",
+                    str(args.seed),
+                ],
+                out / (name + ".log"),
+            )
         verify_code = container(
             'python3 /work/scripts/sil/verify.py "$@"',
             [inside + "/" + name],
@@ -219,7 +283,15 @@ def main():
         result["passed"] = result["passed"] and run_code == 0 and verify_code == 0
         results.append(result)
         (out / "summary.json").write_text(
-            json.dumps({"passed": False, "cases": results}, indent=2) + "\n"
+            json.dumps(
+                {
+                    "passed": False,
+                    "cases": results,
+                    "startup_failures": startup_failures,
+                },
+                indent=2,
+            )
+            + "\n"
         )
         print(f"{name}: {'PASS' if result['passed'] else 'FAIL'}", flush=True)
     code = container(
@@ -244,6 +316,7 @@ def main():
         and contact["passed"]
         and unchanged,
         "cases": results,
+        "startup_failures": startup_failures,
         "contact_positive_control_passed": contact["passed"],
         "source_unchanged_during_suite": unchanged,
     }

@@ -49,6 +49,33 @@ def main():
                 for k, v in expected.items()
                 if k not in ["case", "runner_exit", "verifier_exit"]
             }, expected["case"]
+        for failure in summary.get("startup_failures", []):
+            episode = temp / failure["artifact_directory"]
+            receipt = json.loads((episode / "result.json").read_text())
+            assert (
+                receipt["passed"] is False
+                and "mission_start_sim" not in receipt
+                and receipt["retained_lease_owner"] is None
+            )
+            events = [
+                json.loads(line)
+                for line in (episode / "events.jsonl").read_text().splitlines()
+            ]
+            assert all(e["kind"] == "robot_ready" for e in events)
+            failed_reader = rosbag2_py.SequentialReader()
+            failed_reader.open(
+                rosbag2_py.StorageOptions(uri=str(episode / "bag"), storage_id="mcap"),
+                rosbag2_py.ConverterOptions("", ""),
+            )
+            twist_type = get_message("geometry_msgs/msg/Twist")
+            checked = 0
+            while failed_reader.has_next():
+                topic, data, _ = failed_reader.read_next()
+                if topic.endswith("/cmd_vel"):
+                    command = deserialize_message(data, twist_type)
+                    assert abs(command.linear.x) + abs(command.angular.z) == 0
+                    checked += 1
+            assert checked > 0
         # Validate the positive control from serialized ROS observations, not its pass flag.
         control = temp / "contact-positive-control"
         receipt = json.loads((control / "result.json").read_text())
@@ -78,6 +105,9 @@ def main():
                 "passed": True,
                 "verified_episodes": len(summary["cases"]),
                 "positive_control_replayed": True,
+                "retained_startup_failures_replayed": len(
+                    summary.get("startup_failures", [])
+                ),
                 "archive_and_source_hashes": "matched",
             },
             indent=2,

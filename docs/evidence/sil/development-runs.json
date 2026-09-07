@@ -390,6 +390,12 @@
       "note": "Normal colcon install omitted an implicitly shared internal core library; symlink install had hidden the error. Made the internal library explicitly STATIC, switched qualification to normal install, and reran the full suite.",
       "ci_url": "https://github.com/JDinSeattle/warehouse-fleet-lab/actions/runs/34077571808",
       "failure": "libfleet_adapter_core.so not found; allocator exit 127; DDS service startup timed out."
+    },
+    {
+      "run": "qualification-installed-41/controller-restart",
+      "classification": "pre_mission_startup_failure",
+      "note": "robot3 map_server failed to send a lifecycle change-state response; localization never became ready. No mission or controller fault was started and final commands remained zero. Qualifier now permits one fresh-world startup retry under explicit no-motion/no-ownership guards. Underlying DDS issue is not claimed fixed.",
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/qualification-installed-41/controller-restart"
     }
   ]
 }
