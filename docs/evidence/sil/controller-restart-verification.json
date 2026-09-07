@@ -5,33 +5,33 @@
   "fault": "nav_restart",
   "seed": 41,
   "completed_tasks": 3,
-  "mission_sim_seconds": 89.06700000000001,
-  "wall_seconds": 98.85217947800265,
-  "ground_truth_samples": 13446,
+  "mission_sim_seconds": 92.571,
+  "wall_seconds": 101.42919671900017,
+  "ground_truth_samples": 13956,
   "max_ground_truth_gap_seconds": {
-    "1": 0.06300000000000061,
-    "2": 0.06300000000000061,
-    "3": 0.06300000000000061
+    "1": 0.03900000000000148,
+    "2": 0.03900000000000148,
+    "3": 0.03900000000000148
   },
   "path_length_meters": {
-    "1": 7.932743381212319,
-    "2": 6.0456329805665225,
-    "3": 7.850714246462316
+    "1": 8.003817738994192,
+    "2": 6.03386220366047,
+    "3": 8.186245001082051
   },
-  "pair_samples": 26889,
-  "min_pair_distance_meters": 1.1563706763175625,
+  "pair_samples": 27909,
+  "min_pair_distance_meters": 1.0854329225904433,
   "chassis_contact_events": 0,
-  "min_center_to_wall_meters": 0.6991014854656238,
-  "max_delivery_error_meters": 0.2348814063290404,
+  "min_center_to_wall_meters": 0.7142514295317889,
+  "max_delivery_error_meters": 0.25195689790651526,
   "unauthorized_nonzero_commands": 0,
   "fault_observations": {
     "controller_process_ids": [
-      "59",
-      "113",
-      "303",
-      "1149"
+      "58",
+      "164",
+      "372",
+      "1148"
     ],
     "outage_zero_command_samples": 30
   },
-  "bag_message_count": 142210
+  "bag_message_count": 147652
 }

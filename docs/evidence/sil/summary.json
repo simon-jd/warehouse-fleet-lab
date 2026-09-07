@@ -8,23 +8,23 @@
       "fault": "none",
       "seed": 41,
       "completed_tasks": 1,
-      "mission_sim_seconds": 30.884999999999998,
-      "wall_seconds": 38.50149447000149,
-      "ground_truth_samples": 1679,
+      "mission_sim_seconds": 26.916,
+      "wall_seconds": 34.24916982099967,
+      "ground_truth_samples": 1494,
       "max_ground_truth_gap_seconds": {
-        "1": 0.029999999999997584
+        "1": 0.030000000000001137
       },
       "path_length_meters": {
-        "1": 8.15787929398173
+        "1": 7.884183770405471
       },
       "pair_samples": 0,
       "min_pair_distance_meters": null,
       "chassis_contact_events": 0,
-      "min_center_to_wall_meters": 0.7346956157449717,
-      "max_delivery_error_meters": 0.0999717394558603,
+      "min_center_to_wall_meters": 0.7314489396773102,
+      "max_delivery_error_meters": 0.1724275268261247,
       "unauthorized_nonzero_commands": 0,
       "fault_observations": {},
-      "bag_message_count": 26254,
+      "bag_message_count": 23418,
       "case": "single",
       "runner_exit": 0,
       "verifier_exit": 0
@@ -36,27 +36,27 @@
       "fault": "none",
       "seed": 41,
       "completed_tasks": 3,
-      "mission_sim_seconds": 84.708,
-      "wall_seconds": 95.4969476740007,
-      "ground_truth_samples": 12858,
+      "mission_sim_seconds": 81.624,
+      "wall_seconds": 90.3888283970009,
+      "ground_truth_samples": 12384,
       "max_ground_truth_gap_seconds": {
-        "1": 0.06299999999999528,
-        "2": 0.06299999999999528,
-        "3": 0.06299999999999528
+        "1": 0.03300000000000125,
+        "2": 0.03300000000000125,
+        "3": 0.03300000000000125
       },
       "path_length_meters": {
-        "1": 7.891227636006348,
-        "2": 6.1219158275394445,
-        "3": 8.028230532488811
+        "1": 7.898106446521382,
+        "2": 6.106282982022742,
+        "3": 8.023353783849243
       },
-      "pair_samples": 25713,
-      "min_pair_distance_meters": 1.1033505195414484,
+      "pair_samples": 24765,
+      "min_pair_distance_meters": 1.158245208205752,
       "chassis_contact_events": 0,
-      "min_center_to_wall_meters": 0.7258439841782508,
-      "max_delivery_error_meters": 0.2405480210225019,
+      "min_center_to_wall_meters": 0.7239953069392691,
+      "max_delivery_error_meters": 0.20472065653835184,
       "unauthorized_nonzero_commands": 0,
       "fault_observations": {},
-      "bag_message_count": 136276,
+      "bag_message_count": 131564,
       "case": "three",
       "runner_exit": 0,
       "verifier_exit": 0
@@ -68,32 +68,32 @@
       "fault": "scan_delay",
       "seed": 41,
       "completed_tasks": 3,
-      "mission_sim_seconds": 88.449,
-      "wall_seconds": 98.03260064100323,
-      "ground_truth_samples": 13320,
+      "mission_sim_seconds": 83.45700000000001,
+      "wall_seconds": 92.5105127420029,
+      "ground_truth_samples": 12693,
       "max_ground_truth_gap_seconds": {
-        "1": 0.03900000000000148,
-        "2": 0.03900000000000148,
+        "1": 0.04200000000000159,
+        "2": 0.03300000000000125,
         "3": 0.03300000000000125
       },
       "path_length_meters": {
-        "1": 7.9826432879070515,
-        "2": 6.353133223861283,
-        "3": 7.897035877827974
+        "1": 7.946994136815174,
+        "2": 6.048342050227732,
+        "3": 7.992160285495371
       },
-      "pair_samples": 26637,
-      "min_pair_distance_meters": 1.056380094681233,
+      "pair_samples": 25383,
+      "min_pair_distance_meters": 1.137811943208346,
       "chassis_contact_events": 0,
-      "min_center_to_wall_meters": 0.5865800828271163,
-      "max_delivery_error_meters": 0.26210292452090633,
+      "min_center_to_wall_meters": 0.7301784735289363,
+      "max_delivery_error_meters": 0.2294074751371338,
       "unauthorized_nonzero_commands": 0,
       "fault_observations": {
-        "observed_duration_seconds": 4.0169999999999995,
+        "observed_duration_seconds": 4.029,
         "zero_command_samples": 60,
-        "settled_hold_drift_meters": 0.0,
-        "max_observed_scan_age_seconds": 1.0560000000000005
+        "settled_hold_drift_meters": 1.404378853694438e-06,
+        "max_observed_scan_age_seconds": 1.0380000000000003
       },
-      "bag_message_count": 141282,
+      "bag_message_count": 134357,
       "case": "scan-delay",
       "runner_exit": 0,
       "verifier_exit": 0
@@ -105,31 +105,31 @@
       "fault": "actuator_hold",
       "seed": 41,
       "completed_tasks": 3,
-      "mission_sim_seconds": 88.914,
-      "wall_seconds": 98.20531551699969,
-      "ground_truth_samples": 13374,
+      "mission_sim_seconds": 82.761,
+      "wall_seconds": 91.33926743600023,
+      "ground_truth_samples": 12567,
       "max_ground_truth_gap_seconds": {
-        "1": 0.036000000000001364,
-        "2": 0.036000000000001364,
-        "3": 0.036000000000001364
+        "1": 0.03300000000000125,
+        "2": 0.03300000000000125,
+        "3": 0.03300000000000125
       },
       "path_length_meters": {
-        "1": 7.944751957567135,
-        "2": 6.051289313442897,
-        "3": 8.138226775919733
+        "1": 7.8530141496807895,
+        "2": 6.080427404943591,
+        "3": 8.014352997318323
       },
-      "pair_samples": 26745,
-      "min_pair_distance_meters": 1.1365045700848904,
+      "pair_samples": 25131,
+      "min_pair_distance_meters": 1.1323065151552343,
       "chassis_contact_events": 0,
-      "min_center_to_wall_meters": 0.6559610440082381,
-      "max_delivery_error_meters": 0.24860875924943998,
+      "min_center_to_wall_meters": 0.7170403068236468,
+      "max_delivery_error_meters": 0.24377214070970146,
       "unauthorized_nonzero_commands": 0,
       "fault_observations": {
-        "observed_duration_seconds": 4.0200000000000005,
+        "observed_duration_seconds": 4.029000000000001,
         "zero_command_samples": 60,
-        "settled_hold_drift_meters": 1.3097033276879566e-06
+        "settled_hold_drift_meters": 1.4031004938604501e-06
       },
-      "bag_message_count": 142124,
+      "bag_message_count": 133180,
       "case": "actuator-hold",
       "runner_exit": 0,
       "verifier_exit": 0
@@ -141,40 +141,41 @@
       "fault": "nav_restart",
       "seed": 41,
       "completed_tasks": 3,
-      "mission_sim_seconds": 89.06700000000001,
-      "wall_seconds": 98.85217947800265,
-      "ground_truth_samples": 13446,
+      "mission_sim_seconds": 92.571,
+      "wall_seconds": 101.42919671900017,
+      "ground_truth_samples": 13956,
       "max_ground_truth_gap_seconds": {
-        "1": 0.06300000000000061,
-        "2": 0.06300000000000061,
-        "3": 0.06300000000000061
+        "1": 0.03900000000000148,
+        "2": 0.03900000000000148,
+        "3": 0.03900000000000148
       },
       "path_length_meters": {
-        "1": 7.932743381212319,
-        "2": 6.0456329805665225,
-        "3": 7.850714246462316
+        "1": 8.003817738994192,
+        "2": 6.03386220366047,
+        "3": 8.186245001082051
       },
-      "pair_samples": 26889,
-      "min_pair_distance_meters": 1.1563706763175625,
+      "pair_samples": 27909,
+      "min_pair_distance_meters": 1.0854329225904433,
       "chassis_contact_events": 0,
-      "min_center_to_wall_meters": 0.6991014854656238,
-      "max_delivery_error_meters": 0.2348814063290404,
+      "min_center_to_wall_meters": 0.7142514295317889,
+      "max_delivery_error_meters": 0.25195689790651526,
       "unauthorized_nonzero_commands": 0,
       "fault_observations": {
         "controller_process_ids": [
-          "59",
-          "113",
-          "303",
-          "1149"
+          "58",
+          "164",
+          "372",
+          "1148"
         ],
         "outage_zero_command_samples": 30
       },
-      "bag_message_count": 142210,
+      "bag_message_count": 147652,
       "case": "controller-restart",
       "runner_exit": 0,
       "verifier_exit": 0
     }
   ],
+  "startup_failures": [],
   "contact_positive_control_passed": true,
   "source_unchanged_during_suite": true
 }

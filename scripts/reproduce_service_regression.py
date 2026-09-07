@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Demonstrate the early-service defect in an isolated, deliberately mutated build."""
 import json
-from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+from pathlib import Path
 
 root=Path(__file__).resolve().parents[1]
 with tempfile.TemporaryDirectory(prefix='fleet-service-regression-') as temp:
@@ -21,7 +21,7 @@ with tempfile.TemporaryDirectory(prefix='fleet-service-regression-') as temp:
     subprocess.run(['cmake','-S',str(dest),'-B',str(dest/'build'),'-DCMAKE_BUILD_TYPE=Release','-DBUILD_TESTING=OFF'],check=True,stdout=subprocess.DEVNULL)
     subprocess.run(['cmake','--build',str(dest/'build'),'-j2'],check=True,stdout=subprocess.DEVNULL)
     args=['simulate','--map',str(root/'maps/development.map'),'--agents','4','--ticks','60','--seed','91','--strategy','distance','--lambda','0']
-    faulty=subprocess.run([str(dest/'build/fleet'),*args],capture_output=True,text=True)
+    faulty=subprocess.run([str(dest/'build/fleet'),*args],capture_output=True,text=True,check=False)
     fixed=subprocess.run([str(root/'build/fleet'),*args],capture_output=True,text=True,check=True)
     assert faulty.returncode!=0 and 'conflicting reservation input' in faulty.stderr
     summary=json.loads(fixed.stdout)

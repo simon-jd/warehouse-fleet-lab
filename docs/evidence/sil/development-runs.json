@@ -396,6 +396,13 @@
       "classification": "pre_mission_startup_failure",
       "note": "robot3 map_server failed to send a lifecycle change-state response; localization never became ready. No mission or controller fault was started and final commands remained zero. Qualifier now permits one fresh-world startup retry under explicit no-motion/no-ownership guards. Underlying DDS issue is not claimed fixed.",
       "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/qualification-installed-41/controller-restart"
+    },
+    {
+      "run": "qualification-final-41",
+      "classification": "superseded_symlink_install_qualification",
+      "note": "Five SIL cases passed, then cold CI exposed a missing library in normal installation. Retained separately and superseded by the clean normal-install suite.",
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/qualification-final-41",
+      "code_commit": "c32a291e548936a6f0f37030d57a2f4e4bc110a2"
     }
   ]
 }

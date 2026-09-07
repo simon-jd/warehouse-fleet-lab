@@ -1,7 +1,7 @@
 Starting >>> warehouse_fleet_ros
-Finished <<< warehouse_fleet_ros [0.38s]
+Finished <<< warehouse_fleet_ros [0.32s]
 
-Summary: 1 package finished [0.45s]
+Summary: 1 package finished [0.41s]
 {
   "passed": true,
   "cases": [

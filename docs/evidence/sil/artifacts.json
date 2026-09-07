@@ -3,28 +3,28 @@
   "scope": "local Gazebo Harmonic SIL; not hardware/HIL",
   "archives": {
     "single.tar.gz": {
-      "sha256": "c24d279890dd0773587328d5e30eb1d564717ac5132533435be9469d4c320593",
-      "bytes": 1372434
+      "sha256": "13ee2398878d24cb15bc690511deb1d3e1434eed36578257cc5ec6bebb958c53",
+      "bytes": 1232427
     },
     "three.tar.gz": {
-      "sha256": "951bc2d2188c658a51df659fd7e2e11d057394e637f3ca0506ed74e66e030a34",
-      "bytes": 8069224
+      "sha256": "d56ac3c89992b9e5f9523ac33b8e334f5325d12d309b1b0db924c3f87b5a1dc7",
+      "bytes": 7734238
     },
     "scan-delay.tar.gz": {
-      "sha256": "5ef5dcc1024f4c7dd8e2f48b44474ad65f34138aceb9f88c2bb8e7e8c0217a86",
-      "bytes": 8428501
+      "sha256": "9282c88dc0c6eca4ae02fc531bf7f9a028afdcf238269557f902157a30009f17",
+      "bytes": 7985013
     },
     "actuator-hold.tar.gz": {
-      "sha256": "b1b36438bdb4a8f49f48fef1ddf3fd6dcdc6d0b8d0b37ab3636f99215a05ddb5",
-      "bytes": 8355438
+      "sha256": "57a029aad2bd596dbba1bccdd35d1f4fa28ce71f48ae8cf24926a06953515140",
+      "bytes": 7987209
     },
     "controller-restart.tar.gz": {
-      "sha256": "65da1d6c7a47679379dffc8dd1f5bdf54375454577b20833c798f5fe8e166476",
-      "bytes": 8348626
+      "sha256": "91dd66ac682321a84fa811394fd77d99359c84a9cf771c2602fd742dfd4f431c",
+      "bytes": 8694133
     },
     "contact-positive-control.tar.gz": {
-      "sha256": "736134b2cfb45a46623be26179cdb02089c490218807bf3b15f19692b35ffd2f",
-      "bytes": 29898
+      "sha256": "6cee664817b3758a10263c5b6da7f2107c810f3dbb9c8d8d53190a0c07d8a270",
+      "bytes": 29905
     }
   }
 }

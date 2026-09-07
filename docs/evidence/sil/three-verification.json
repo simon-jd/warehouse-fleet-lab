@@ -5,25 +5,25 @@
   "fault": "none",
   "seed": 41,
   "completed_tasks": 3,
-  "mission_sim_seconds": 84.708,
-  "wall_seconds": 95.4969476740007,
-  "ground_truth_samples": 12858,
+  "mission_sim_seconds": 81.624,
+  "wall_seconds": 90.3888283970009,
+  "ground_truth_samples": 12384,
   "max_ground_truth_gap_seconds": {
-    "1": 0.06299999999999528,
-    "2": 0.06299999999999528,
-    "3": 0.06299999999999528
+    "1": 0.03300000000000125,
+    "2": 0.03300000000000125,
+    "3": 0.03300000000000125
   },
   "path_length_meters": {
-    "1": 7.891227636006348,
-    "2": 6.1219158275394445,
-    "3": 8.028230532488811
+    "1": 7.898106446521382,
+    "2": 6.106282982022742,
+    "3": 8.023353783849243
   },
-  "pair_samples": 25713,
-  "min_pair_distance_meters": 1.1033505195414484,
+  "pair_samples": 24765,
+  "min_pair_distance_meters": 1.158245208205752,
   "chassis_contact_events": 0,
-  "min_center_to_wall_meters": 0.7258439841782508,
-  "max_delivery_error_meters": 0.2405480210225019,
+  "min_center_to_wall_meters": 0.7239953069392691,
+  "max_delivery_error_meters": 0.20472065653835184,
   "unauthorized_nonzero_commands": 0,
   "fault_observations": {},
-  "bag_message_count": 136276
+  "bag_message_count": 131564
 }

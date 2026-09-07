@@ -34,6 +34,8 @@
   "goal_wall_timeout_seconds": 180,
   "goal_attempts": 3,
   "episode_wall_timeout_seconds": 900,
+  "startup_attempts_per_case": 2,
+  "startup_retry_condition": "Readiness timeout before mission start; no ownership and zero recorded final velocity. Entire isolated container/world is recreated; failed attempt retained.",
   "min_robot_center_separation_m": 0.48,
   "min_wall_center_clearance_m": 0.24,
   "max_delivery_error_m": 0.45,

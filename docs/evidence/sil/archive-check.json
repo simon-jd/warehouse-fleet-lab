@@ -2,5 +2,6 @@
   "passed": true,
   "verified_episodes": 5,
   "positive_control_replayed": true,
+  "retained_startup_failures_replayed": 0,
   "archive_and_source_hashes": "matched"
 }
