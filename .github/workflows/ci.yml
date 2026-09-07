@@ -38,4 +38,7 @@ jobs:
               colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
               source install/setup.bash
               python3 /work/tests/sil/test_ros_service.py
+              python3 /work/tests/sil/test_lifecycle_recovery.py --out /work/runs/ci-lifecycle-tests
+              python3 /work/tests/sil/test_lifecycle_baseline.py --out /work/runs/ci-lifecycle-baseline
+              python3 /work/tests/sil/test_readiness.py --out /work/runs/ci-readiness-tests
             '

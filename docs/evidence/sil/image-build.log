@@ -25,9 +25,9 @@
 #7 exporting layers done
 #7 exporting manifest sha256:c3f6fdc3f335783e6cbd42d832da2ecc3589d0a9d769845d726fbf696586f647 done
 #7 exporting config sha256:900131b2c7ad57e02c602cf34506285dc41b20fc552a3c7bbbbfd3d92e7bd644 done
-#7 exporting attestation manifest sha256:12ea44629d9c78e3fe7a27b9dae60f370437d20ad37910b4911184af8b7000ce 0.0s done
-#7 exporting manifest list sha256:aa75669db09b6eae9de5160625656eafeb40ea8e66ac27eaa38be5957cbb9ed6 0.0s done
-#7 naming to docker.io/library/warehouse-fleet:jazzy-sil
+#7 exporting attestation manifest sha256:eb98e5e9b734abcb70fe9c05b5d9ffaead8c0b58fc46bbde0198671c226ea734 0.1s done
+#7 exporting manifest list sha256:142201ab2651b1cafaf400f098fff00fca971d4f060e7d9896bef389e81387cd
+#7 exporting manifest list sha256:142201ab2651b1cafaf400f098fff00fca971d4f060e7d9896bef389e81387cd 0.0s done
 #7 naming to docker.io/library/warehouse-fleet:jazzy-sil done
 #7 unpacking to docker.io/library/warehouse-fleet:jazzy-sil 0.0s done
 #7 DONE 0.2s

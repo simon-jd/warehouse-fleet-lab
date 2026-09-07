@@ -34,6 +34,9 @@ def setup(context):
         raise ValueError("robots must be 1 or 3")
     out = Path(arg("run_dir")).resolve()
     out.mkdir(parents=True, exist_ok=True)
+    lifecycle_fault = arg("lifecycle_fault") == "reply_loss"
+    if lifecycle_fault and count != 3:
+        raise ValueError("lifecycle response-loss test requires three robots")
     write_maps(out)
     world = ET.fromstring(
         xacro.process_file(
@@ -158,6 +161,19 @@ def setup(context):
             )
         config = out / f"{ns}.yaml"
         config.write_text(yaml.safe_dump(params))
+        lifecycle_remaps = []
+        if lifecycle_fault and i == 3:
+            lifecycle_remaps = [
+                SetRemap(src="map_server:~/change_state", dst="~/change_state_actual")
+            ]
+            actions.append(
+                Node(
+                    package="nav2_lifecycle_manager",
+                    executable="lifecycle_reply_proxy",
+                    namespace=ns,
+                    output="screen",
+                )
+            )
         actions.extend(
             [
                 Node(
@@ -183,6 +199,7 @@ def setup(context):
                 GroupAction(
                     [
                         SetRemap(src="docking_server:cmd_vel", dst="cmd_vel_nav"),
+                        *lifecycle_remaps,
                         IncludeLaunchDescription(
                             PythonLaunchDescriptionSource(
                                 str(nav / "launch/bringup_launch.py")
@@ -248,6 +265,7 @@ def generate_launch_description():
                 "run_dir": "/tmp/fleet-sil",
                 "robots": "1",
                 "seed": "41",
+                "lifecycle_fault": "none",
             }.items()
         ]
         + [OpaqueFunction(function=setup)]

@@ -403,6 +403,39 @@
       "note": "Five SIL cases passed, then cold CI exposed a missing library in normal installation. Retained separately and superseded by the clean normal-install suite.",
       "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/qualification-final-41",
       "code_commit": "c32a291e548936a6f0f37030d57a2f4e4bc110a2"
+    },
+    {
+      "run": "qualification-bounded-41",
+      "classification": "superseded_before_lifecycle_patch",
+      "note": "Five-case qualification passed before the state-reconciliation overlay; retained locally and in commit 74d18e8. Not pooled into the current six-case measurements.",
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/qualification-bounded-41"
+    },
+    {
+      "run": "lifecycle-dev-1",
+      "classification": "development_not_final_qualification",
+      "note": "17 DDS fixtures passed; review identified that absent-service fixtures still advertised unspun services. They were changed to destroy those endpoints before final tests; final source and raw results are separate."
+    },
+    {
+      "run": "lifecycle-physics-dev-1",
+      "classification": "development_not_final_qualification",
+      "note": "Real map-server reply suppression recovered and three missions completed; final suite reruns frozen source and is the measurement authority.",
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/lifecycle-physics-dev-1"
+    },
+    {
+      "run": "lifecycle overlay preflight",
+      "classification": "build_invocation_corrected",
+      "note": "Container colcon lacked --allow-overriding; normal colcon overlay build succeeded. No middleware/system installation was replaced."
+    },
+    {
+      "run": "qualification-lifecycle-41",
+      "classification": "frozen_regression_failure_fixed",
+      "note": "Five of six SIL cases passed with unchanged source; controller restart failed because the coordinator treated a missing read-only state response as a terminal exception. Lease owner 1 was retained. Added bounded readiness rounds, request cleanup and disabled permits during readiness; full suite rerun separately.",
+      "raw_artifacts_retained_locally": "/home/postedism/Desktop/Warehouse Fleet Autonomy/runs/sil/qualification-lifecycle-41"
+    },
+    {
+      "run": "readiness-dev-1",
+      "classification": "regression_fixture_detected_cleanup_gap",
+      "note": "Readiness test found completed futures still awaiting rclpy done-callback cleanup. Every completed or expired request is now explicitly removed at round end; readiness-dev-2 passed."
     }
   ]
 }

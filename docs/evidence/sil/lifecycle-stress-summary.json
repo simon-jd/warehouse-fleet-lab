@@ -1,0 +1,1405 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00150902,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "000-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302524,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "001-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20146,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "002-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20155,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "003-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00151801,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "004-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302899,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "005-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20189,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "006-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20167,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "007-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00196346,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "008-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302729,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "009-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20141,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "010-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.2015,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "011-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00151514,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "012-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302332,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "013-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20206,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "014-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20438,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "015-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00184056,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "016-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302356,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "017-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20212,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "018-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20152,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "019-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00202085,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "020-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302388,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "021-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20211,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "022-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20161,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "023-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00159313,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "024-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302457,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "025-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20177,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "026-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20196,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "027-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00152331,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "028-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.30231,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "029-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20193,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "030-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20197,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "031-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00153167,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "032-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302177,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "033-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20177,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "034-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20151,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "035-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00154894,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "036-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302114,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "037-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20181,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "038-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.2018,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "039-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00162484,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "040-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302346,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "041-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20179,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "042-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20142,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "043-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00163403,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "044-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302235,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "045-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20193,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "046-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20131,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "047-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.0016523,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "048-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.301925,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "049-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20162,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "050-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20166,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "051-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00158713,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "052-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302435,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "053-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20176,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "054-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20156,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "055-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00162743,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "056-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.301844,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "057-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20177,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "058-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20154,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "059-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00152689,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "060-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302712,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "061-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.202,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "062-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20229,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "063-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00218667,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "064-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.303704,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "065-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20217,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "066-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20171,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "067-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00158879,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "068-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302239,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "069-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20177,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "070-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20206,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "071-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00190673,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "072-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302904,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "073-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20184,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "074-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20157,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "075-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00153594,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "076-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302413,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "077-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20181,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "078-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20269,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "079-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00163294,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "080-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302172,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "081-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20187,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "082-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.2019,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "083-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00221139,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "084-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.303263,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "085-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20184,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "086-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20171,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "087-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00189512,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "088-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302659,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "089-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20165,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "090-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20155,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "091-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00171696,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "092-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302379,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "093-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.2018,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "094-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20161,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "095-manager_absent.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00155896,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "096-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302284,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "097-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20201,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "098-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20147,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "099-manager_absent.log"
+    }
+  ]
+}

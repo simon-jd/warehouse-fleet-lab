@@ -5,21 +5,21 @@
   "fault": "none",
   "seed": 41,
   "completed_tasks": 1,
-  "mission_sim_seconds": 26.916,
-  "wall_seconds": 34.24916982099967,
-  "ground_truth_samples": 1494,
+  "mission_sim_seconds": 29.508,
+  "wall_seconds": 38.12494878299913,
+  "ground_truth_samples": 1643,
   "max_ground_truth_gap_seconds": {
-    "1": 0.030000000000001137
+    "1": 0.05999999999999872
   },
   "path_length_meters": {
-    "1": 7.884183770405471
+    "1": 8.041281809655906
   },
   "pair_samples": 0,
   "min_pair_distance_meters": null,
   "chassis_contact_events": 0,
-  "min_center_to_wall_meters": 0.7314489396773102,
-  "max_delivery_error_meters": 0.1724275268261247,
+  "min_center_to_wall_meters": 0.6948896330219222,
+  "max_delivery_error_meters": 0.13312559885809394,
   "unauthorized_nonzero_commands": 0,
   "fault_observations": {},
-  "bag_message_count": 23418
+  "bag_message_count": 25683
 }

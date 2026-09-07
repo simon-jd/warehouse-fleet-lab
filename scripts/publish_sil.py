@@ -34,7 +34,13 @@ def main():
     ]:
         shutil.copyfile(args.suite / name, args.out / name)
     archives = {}
-    directories = [r["case"] for r in summary["cases"]] + ["contact-positive-control"]
+    directories = [r["case"] for r in summary["cases"]] + [
+        "contact-positive-control",
+        "lifecycle-tests",
+        "lifecycle-baseline",
+        "lifecycle-stress",
+        "readiness-tests",
+    ]
     directories += [
         r["artifact_directory"] for r in summary.get("startup_failures", [])
     ]

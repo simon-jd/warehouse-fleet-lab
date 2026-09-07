@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "first_get_lost",
+      "passed": true,
+      "rounds": [
+        {
+          "ready": false,
+          "wall_seconds": 0.2643051090053632
+        },
+        {
+          "ready": true,
+          "wall_seconds": 0.0005239429956418462
+        },
+        {
+          "ready": true,
+          "wall_seconds": 0.0001991159952012822
+        }
+      ]
+    },
+    {
+      "case": "get_silent",
+      "passed": true,
+      "rounds": [
+        {
+          "ready": false,
+          "wall_seconds": 0.2506300660024863
+        },
+        {
+          "ready": false,
+          "wall_seconds": 1.0004319139989093
+        },
+        {
+          "ready": false,
+          "wall_seconds": 1.0006854830062366
+        }
+      ]
+    },
+    {
+      "case": "manager_inactive",
+      "passed": true,
+      "rounds": [
+        {
+          "ready": false,
+          "wall_seconds": 0.0005113770021125674
+        },
+        {
+          "ready": false,
+          "wall_seconds": 0.00017146400205092505
+        },
+        {
+          "ready": false,
+          "wall_seconds": 0.00012394599616527557
+        }
+      ]
+    }
+  ]
+}

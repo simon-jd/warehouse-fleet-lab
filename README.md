@@ -6,7 +6,7 @@ A C++20 planning simulator with a ROS 2 / Gazebo execution adapter. The discrete
 
 ![Three-robot pause and closure replay](docs/assets/recovery.gif)
 
-[Download the MP4 demo](docs/assets/recovery.mp4). The animation is generated from an actual discrete trace. The separate [ROS 2 / Gazebo SIL layer](docs/sil-design.md) runs one or three physical simulated robots through Nav2, with delayed-lidar, actuator-hold and controller-restart tests. Built with coding-agent assistance; no physical hardware was used.
+[Download the MP4 demo](docs/assets/recovery.mp4). The animation is generated from an actual discrete trace. The separate [ROS 2 / Gazebo SIL layer](docs/sil-design.md) runs one or three physical simulated robots through Nav2, with delayed-lidar, actuator-hold, controller-restart and lifecycle-response-loss tests. Built with coding-agent assistance; no physical hardware was used.
 
 ## Build and reproduce
 
@@ -43,13 +43,13 @@ python3 -m venv .venv
 
 ## Run ROS 2 / Gazebo qualification
 
-Docker Engine on Linux and Python 3.10+ are required. The command builds the Jazzy/Harmonic dependency image and C++ adapter, exercises actual ROS service contracts, then runs five isolated episodes and a deliberate collision positive control. It retains MCAP bags, generated worlds/configurations, action events and independent verification reports. Use a fresh output path inside this checkout.
+Docker Engine on Linux and Python 3.10+ are required. The command builds the Jazzy/Harmonic dependency image and C++ adapter, exercises actual ROS service contracts, then runs six isolated episodes and a deliberate collision positive control. It retains MCAP bags, generated worlds/configurations, action events and independent verification reports. Use a fresh output path inside this checkout.
 
 ```bash
 python3 scripts/sil/qualify.py --out runs/sil/my-qualification
 ```
 
-The physics suite runs locally; hosted CI builds the adapter and tests DDS service contracts. [Measured SIL results and artifact replay](docs/sil-validation.md) explain the evidence boundary and reproduction commands.
+A [bounded lifecycle recovery patch](docs/lifecycle-recovery.md) handles missing responses with state confirmation and no blind mutation retries. The physics suite runs locally; hosted CI builds the adapter and tests DDS service contracts. [Measured SIL results and artifact replay](docs/sil-validation.md) explain the evidence boundary and reproduction commands.
 
 ## What is implemented
 

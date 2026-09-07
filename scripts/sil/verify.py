@@ -33,6 +33,13 @@ def verify(out):
             errors.append(message)
 
     require(run["passed"], "runner did not complete")
+    require(
+        (out / "launch.log")
+        .read_text()
+        .count("FLEET_LIFECYCLE_PATCH bounded_state_reconciliation_v1")
+        >= 2 * run["robots"],
+        "patched localization/navigation lifecycle managers were not observed",
+    )
     robots = range(1, run["robots"] + 1)
     for robot in robots:
         ns = f"/robot{robot}"
@@ -269,7 +276,45 @@ def verify(out):
     require(unauthorized == 0, "non-owner received nonzero commands")
     fault = run["fault"]
     fault_metrics = {}
-    if fault != "none":
+    if fault == "lifecycle_reply_loss":
+        log = (out / "launch.log").read_text()
+        dropped = (
+            "FLEET_REPLY_PROXY configured_real_map_server=true response_suppressed=true"
+        )
+        reconciled = "node=map_server outcome=reconciled target=2"
+        require(
+            log.count(dropped) == 1,
+            "real map-server reply was not suppressed exactly once",
+        )
+        require(reconciled in log, "missing lifecycle state reconciliation")
+        require(
+            log.count("FLEET_REPLY_PROXY forwarded_transition=1") == 1,
+            "configure was not forwarded exactly once",
+        )
+        require(
+            log.count("FLEET_REPLY_PROXY forwarded_transition=3") == 1,
+            "activate was not forwarded exactly once",
+        )
+        initial_commands = [
+            (v, w)
+            for rows in commands.values()
+            for t, v, w in rows
+            if t < mission_start
+        ]
+        require(
+            len(initial_commands) >= 20
+            and all(abs(v) + abs(w) < 1e-5 for v, w in initial_commands),
+            "motion before lifecycle startup completed",
+        )
+        fault_metrics = {
+            "suppressed_real_configure_responses": log.count(dropped),
+            "configure_requests_forwarded": log.count(
+                "FLEET_REPLY_PROXY forwarded_transition=1"
+            ),
+            "pre_mission_zero_commands": len(initial_commands),
+            "state_reconciled_without_world_restart": reconciled in log,
+        }
+    elif fault != "none":
         requests = [e for e in events if e["kind"] == "fault_requested"]
         require(
             len(requests) == 1 and requests[0]["fault"] == fault,

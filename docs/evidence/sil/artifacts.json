@@ -3,28 +3,48 @@
   "scope": "local Gazebo Harmonic SIL; not hardware/HIL",
   "archives": {
     "single.tar.gz": {
-      "sha256": "13ee2398878d24cb15bc690511deb1d3e1434eed36578257cc5ec6bebb958c53",
-      "bytes": 1232427
+      "sha256": "5736f081ca0fe46b608cec4e36fba86a0e8334bf83b137bd9bba17367ebbfa24",
+      "bytes": 1334213
     },
     "three.tar.gz": {
-      "sha256": "d56ac3c89992b9e5f9523ac33b8e334f5325d12d309b1b0db924c3f87b5a1dc7",
-      "bytes": 7734238
+      "sha256": "ecc4701b14fcbe6afa04ba7562dafc4ac6a005712d73094ee3aae0aa68359ce1",
+      "bytes": 8455631
     },
     "scan-delay.tar.gz": {
-      "sha256": "9282c88dc0c6eca4ae02fc531bf7f9a028afdcf238269557f902157a30009f17",
-      "bytes": 7985013
+      "sha256": "5b244121afe2b91fdc740104c9c0358893fb32459e1eb860fac53cc01a72ebb5",
+      "bytes": 8255270
     },
     "actuator-hold.tar.gz": {
-      "sha256": "57a029aad2bd596dbba1bccdd35d1f4fa28ce71f48ae8cf24926a06953515140",
-      "bytes": 7987209
+      "sha256": "beaba23caa1aeb8a34be4f52affce936c05d161e3ba91409b1543e4764a94bba",
+      "bytes": 8513561
     },
     "controller-restart.tar.gz": {
-      "sha256": "91dd66ac682321a84fa811394fd77d99359c84a9cf771c2602fd742dfd4f431c",
-      "bytes": 8694133
+      "sha256": "76102008fe0ef97f5ef6271bff2fc299964fd92e37004970835d413c35098837",
+      "bytes": 9042769
+    },
+    "lifecycle-reply-loss.tar.gz": {
+      "sha256": "37d410cd0c224005b6b6a3921a7351203c3e797c7f6cb76615d8806d077f22e0",
+      "bytes": 7836033
     },
     "contact-positive-control.tar.gz": {
-      "sha256": "6cee664817b3758a10263c5b6da7f2107c810f3dbb9c8d8d53190a0c07d8a270",
-      "bytes": 29905
+      "sha256": "6f02e027b94d3fc72a26eef8f9898d758cb2a57a9491b1f7374572b36beeb67f",
+      "bytes": 30182
+    },
+    "lifecycle-tests.tar.gz": {
+      "sha256": "9f74b8e52ee7dee8c24c5e23dca2754370b08130e2ed05591c897c8911e8ee16",
+      "bytes": 7608
+    },
+    "lifecycle-baseline.tar.gz": {
+      "sha256": "fcf2bca0f95481f42ca4dbb0dd8c6ef670fc912e68dfa278091df5656f05b5a6",
+      "bytes": 5594
+    },
+    "lifecycle-stress.tar.gz": {
+      "sha256": "49b1a250159e0d36cf2f5b38a5975ef6743621f75da49d5f334f47d08fe85624",
+      "bytes": 14459
+    },
+    "readiness-tests.tar.gz": {
+      "sha256": "2eb44d988dc3c5c044df345078cf28e7982059cad2d2491bd4c06238a9724038",
+      "bytes": 5812
     }
   }
 }

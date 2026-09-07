@@ -49,6 +49,50 @@ def main():
                 for k, v in expected.items()
                 if k not in ["case", "runner_exit", "verifier_exit"]
             }, expected["case"]
+        for folder, expected_count in [
+            ("lifecycle-tests", 17),
+            ("lifecycle-stress", 100),
+        ]:
+            test_summary = json.loads((temp / folder / "summary.json").read_text())
+            assert (
+                test_summary["passed"] and len(test_summary["cases"]) == expected_count
+            )
+            for case in test_summary["cases"]:
+                log = (temp / folder / case["log"]).read_text()
+                rows = [
+                    json.loads(line.removeprefix("FLEET_TEST "))
+                    for line in log.splitlines()
+                    if line.startswith("FLEET_TEST ")
+                ]
+                assert (
+                    case["passed"] and rows == case["observations"] and len(rows) == 1
+                )
+                assert rows[0]["passed"] and rows[0]["case"] == case["case"]
+        baseline = json.loads((temp / "lifecycle-baseline/summary.json").read_text())
+        readiness = json.loads((temp / "readiness-tests/summary.json").read_text())
+        assert readiness["passed"] and len(readiness["cases"]) == 3
+        for case in readiness["cases"]:
+            assert case["passed"] and len(case["rounds"]) == 3
+            expected = (
+                [False, True, True] if case["case"] == "first_get_lost" else [False] * 3
+            )
+            assert [r["ready"] for r in case["rounds"]] == expected
+            assert all(
+                r["wall_seconds"] < (0.75 if i == 0 else 1.5)
+                for i, r in enumerate(case["rounds"])
+            )
+        assert baseline["passed"] and len(baseline["cases"]) == 2
+        for case in baseline["cases"]:
+            log = (temp / "lifecycle-baseline" / (case["case"] + ".log")).read_text()
+            mutations = [
+                json.loads(line.removeprefix("FLEET_MUTATION "))
+                for line in log.splitlines()
+                if line.startswith("FLEET_MUTATION ")
+            ]
+            assert mutations == case["mutations"] == [{"transition": 1, "state": 2}]
+            assert case["observed_timeout"] == (
+                case["case"] == "baseline_drop_after_apply"
+            )
         for failure in summary.get("startup_failures", []):
             episode = temp / failure["artifact_directory"]
             receipt = json.loads((episode / "result.json").read_text())
@@ -105,6 +149,10 @@ def main():
                 "passed": True,
                 "verified_episodes": len(summary["cases"]),
                 "positive_control_replayed": True,
+                "lifecycle_regression_cases_checked": 17,
+                "readiness_retry_cases_checked": 3,
+                "lifecycle_manager_process_trials_checked": 100,
+                "original_nav2_hang_control_checked": True,
                 "retained_startup_failures_replayed": len(
                     summary.get("startup_failures", [])
                 ),

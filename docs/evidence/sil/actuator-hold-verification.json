@@ -5,29 +5,29 @@
   "fault": "actuator_hold",
   "seed": 41,
   "completed_tasks": 3,
-  "mission_sim_seconds": 82.761,
-  "wall_seconds": 91.33926743600023,
-  "ground_truth_samples": 12567,
+  "mission_sim_seconds": 89.625,
+  "wall_seconds": 98.43307539800298,
+  "ground_truth_samples": 13533,
   "max_ground_truth_gap_seconds": {
     "1": 0.03300000000000125,
     "2": 0.03300000000000125,
     "3": 0.03300000000000125
   },
   "path_length_meters": {
-    "1": 7.8530141496807895,
-    "2": 6.080427404943591,
-    "3": 8.014352997318323
+    "1": 7.8693315945340885,
+    "2": 6.285720401588932,
+    "3": 7.872237352153085
   },
-  "pair_samples": 25131,
-  "min_pair_distance_meters": 1.1323065151552343,
+  "pair_samples": 27063,
+  "min_pair_distance_meters": 1.1912310448907897,
   "chassis_contact_events": 0,
-  "min_center_to_wall_meters": 0.7170403068236468,
-  "max_delivery_error_meters": 0.24377214070970146,
+  "min_center_to_wall_meters": 0.7029325765664407,
+  "max_delivery_error_meters": 0.22311263990127853,
   "unauthorized_nonzero_commands": 0,
   "fault_observations": {
-    "observed_duration_seconds": 4.029000000000001,
+    "observed_duration_seconds": 4.035,
     "zero_command_samples": 60,
-    "settled_hold_drift_meters": 1.4031004938604501e-06
+    "settled_hold_drift_meters": 0.0
   },
-  "bag_message_count": 133180
+  "bag_message_count": 143487
 }

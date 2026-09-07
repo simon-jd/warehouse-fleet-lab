@@ -1,6 +1,6 @@
 # Verification record
 
-Final local source is fingerprinted in the held-out environment manifest and linked by the publication commit. All tests use actual compiled C++ executables. The separate [SIL record](sil-validation.md) covers actual local ROS 2 / Gazebo execution. No physical robot, hardware-in-the-loop device, Kubernetes/cloud deployment, GPU workload or production traffic was run.
+Final local source is fingerprinted in the held-out environment manifest and linked by the publication commit. C++ and ROS service checks use actual compiled executables; Python protocol/oracle cases exercise their own implementation. The separate [SIL record](sil-validation.md) covers actual local ROS 2 / Gazebo execution. No physical robot, hardware-in-the-loop device, Kubernetes/cloud deployment, GPU workload or production traffic was run.
 
 | Verification | Result and evidence |
 |---|---|
@@ -13,7 +13,7 @@ Final local source is fingerprinted in the held-out environment manifest and lin
 | Published artifact revalidation | `python3 scripts/check_evidence.py` checks source/map and every decompressed artifact hash, then reruns the independent Python oracle; [record](evidence/archive-verification.json) |
 | GitHub Actions | Ubuntu 24.04 workflow runs tests with and without sanitizers and a small paired matrix. Live execution status: [Actions](https://github.com/JDinSeattle/warehouse-fleet-lab/actions). It is separate from the local performance matrix |
 
-The current native suite adds ten adversarial lease/watchdog/startup-retry cases: **37 cases across four CTest programs**, passing in [Release](evidence/sil/release-tests.log) and [ASan/UBSan/LeakSanitizer](evidence/sil/sanitizer-tests.log). Eight additional integration cases exercise the compiled allocator over actual ROS DDS services. Physics validation is documented separately from CI and the discrete 360-run experiment.
+The current native suite adds ten adversarial lease/watchdog/startup-retry cases: **37 cases across four CTest programs**, passing in [Release](evidence/sil/release-tests.log) and [ASan/UBSan/LeakSanitizer](evidence/sil/sanitizer-tests.log). Eight additional integration cases exercise the compiled allocator over actual ROS DDS services. Seventeen real-DDS lifecycle recovery cases and three readiness retry/cleanup cases bring the total to **65 distinct native/ROS cases**. The original-hang baseline control and 100 repeated manager-process trials are separate evidence, not extra distinct cases; see [lifecycle recovery](lifecycle-recovery.md). Physics validation is documented separately from CI and the discrete 360-run experiment.
 
 ## Commands
 

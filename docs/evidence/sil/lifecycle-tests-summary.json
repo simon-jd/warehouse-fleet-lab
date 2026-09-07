@@ -1,0 +1,243 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "nominal",
+          "passed": true,
+          "elapsed_seconds": 0.000183708,
+          "mutation_requests": 1,
+          "state_reads": 2
+        }
+      ],
+      "log": "000-nominal.log"
+    },
+    {
+      "case": "drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.150573,
+          "mutation_requests": 1,
+          "state_reads": 2
+        }
+      ],
+      "log": "001-drop_after_apply.log"
+    },
+    {
+      "case": "drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20016,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "002-drop_before_apply.log"
+    },
+    {
+      "case": "late_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "late_apply",
+          "passed": true,
+          "elapsed_seconds": 0.401732,
+          "mutation_requests": 1,
+          "state_reads": 7
+        }
+      ],
+      "log": "003-late_apply.log"
+    },
+    {
+      "case": "apply_after_deadline",
+      "passed": true,
+      "observations": [
+        {
+          "case": "apply_after_deadline",
+          "passed": true,
+          "elapsed_seconds": 1.20016,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "004-apply_after_deadline.log"
+    },
+    {
+      "case": "late_reply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "late_reply",
+          "passed": true,
+          "elapsed_seconds": 0.152678,
+          "mutation_requests": 2,
+          "state_reads": 5
+        }
+      ],
+      "log": "005-late_reply.log"
+    },
+    {
+      "case": "rejected",
+      "passed": true,
+      "observations": [
+        {
+          "case": "rejected",
+          "passed": true,
+          "elapsed_seconds": 0.000216761,
+          "mutation_requests": 1,
+          "state_reads": 1
+        }
+      ],
+      "log": "006-rejected.log"
+    },
+    {
+      "case": "false_success",
+      "passed": true,
+      "observations": [
+        {
+          "case": "false_success",
+          "passed": true,
+          "elapsed_seconds": 1.20028,
+          "mutation_requests": 1,
+          "state_reads": 25
+        }
+      ],
+      "log": "007-false_success.log"
+    },
+    {
+      "case": "get_silent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "get_silent",
+          "passed": true,
+          "elapsed_seconds": 1.20026,
+          "mutation_requests": 0,
+          "state_reads": 6
+        }
+      ],
+      "log": "008-get_silent.log"
+    },
+    {
+      "case": "first_get_lost",
+      "passed": true,
+      "observations": [
+        {
+          "case": "first_get_lost",
+          "passed": true,
+          "elapsed_seconds": 0.200568,
+          "mutation_requests": 1,
+          "state_reads": 3
+        }
+      ],
+      "log": "009-first_get_lost.log"
+    },
+    {
+      "case": "absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "absent",
+          "passed": true,
+          "elapsed_seconds": 1.20024,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "010-absent.log"
+    },
+    {
+      "case": "already_target",
+      "passed": true,
+      "observations": [
+        {
+          "case": "already_target",
+          "passed": true,
+          "elapsed_seconds": 9.6067e-05,
+          "mutation_requests": 0,
+          "state_reads": 1
+        }
+      ],
+      "log": "011-already_target.log"
+    },
+    {
+      "case": "invalid_initial",
+      "passed": true,
+      "observations": [
+        {
+          "case": "invalid_initial",
+          "passed": true,
+          "elapsed_seconds": 0.000168779,
+          "mutation_requests": 0,
+          "state_reads": 1
+        }
+      ],
+      "log": "012-invalid_initial.log"
+    },
+    {
+      "case": "manager_nominal",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_nominal",
+          "passed": true,
+          "elapsed_seconds": 0.00173838,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "013-manager_nominal.log"
+    },
+    {
+      "case": "manager_drop_after_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_after_apply",
+          "passed": true,
+          "elapsed_seconds": 0.302714,
+          "mutation_requests": 2,
+          "state_reads": 4
+        }
+      ],
+      "log": "014-manager_drop_after_apply.log"
+    },
+    {
+      "case": "manager_drop_before_apply",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_drop_before_apply",
+          "passed": true,
+          "elapsed_seconds": 1.20184,
+          "mutation_requests": 1,
+          "state_reads": 22
+        }
+      ],
+      "log": "015-manager_drop_before_apply.log"
+    },
+    {
+      "case": "manager_absent",
+      "passed": true,
+      "observations": [
+        {
+          "case": "manager_absent",
+          "passed": true,
+          "elapsed_seconds": 1.20165,
+          "mutation_requests": 0,
+          "state_reads": 0
+        }
+      ],
+      "log": "016-manager_absent.log"
+    }
+  ]
+}

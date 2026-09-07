@@ -1,13 +1,13 @@
 Test project /home/postedism/Desktop/Warehouse Fleet Autonomy/build
     Start 1: core
-1/4 Test #1: core .............................   Passed    0.39 sec
+1/4 Test #1: core .............................   Passed    0.31 sec
     Start 2: oracle
-2/4 Test #2: oracle ...........................   Passed    0.14 sec
+2/4 Test #2: oracle ...........................   Passed    0.05 sec
     Start 3: integration
-3/4 Test #3: integration ......................   Passed    0.18 sec
+3/4 Test #3: integration ......................   Passed    0.16 sec
     Start 4: sil_protocol
-4/4 Test #4: sil_protocol .....................   Passed    0.05 sec
+4/4 Test #4: sil_protocol .....................   Passed    0.04 sec
 
 100% tests passed, 0 tests failed out of 4
 
-Total Test time (real) =   0.78 sec
+Total Test time (real) =   0.57 sec

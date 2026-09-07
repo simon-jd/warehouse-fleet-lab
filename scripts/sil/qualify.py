@@ -19,6 +19,7 @@ CASES = [
     ("scan-delay", 3, "scan_delay"),
     ("actuator-hold", 3, "actuator_hold"),
     ("controller-restart", 3, "nav_restart"),
+    ("lifecycle-reply-loss", 3, "lifecycle_reply_loss"),
 ]
 
 
@@ -61,7 +62,7 @@ def source_hashes():
     files = [
         *ROOT.glob("scripts/sil/*.py"),
         *ROOT.glob("tests/sil/*.py"),
-        *ROOT.glob("ros2_ws/src/warehouse_fleet_ros/**/*"),
+        *ROOT.glob("ros2_ws/src/**/*"),
         ROOT / "ros2_ws/src/warehouse_fleet_ros/CMakeLists.txt",
         ROOT / "ros2/Dockerfile",
         ROOT / "include/fleet/fleet.hpp",
@@ -146,6 +147,10 @@ def main():
         "goal_attempts": 3,
         "episode_wall_timeout_seconds": 900,
         "startup_attempts_per_case": 2,
+        "lifecycle_reply_loss_startup_attempts": 1,
+        "lifecycle_rpc_timeout_wall_seconds": 1,
+        "lifecycle_transition_timeout_wall_seconds": 15,
+        "lifecycle_mutations_per_transition_attempt": 1,
         "startup_retry_condition": "Readiness timeout before mission start; no ownership and zero recorded final velocity. Entire isolated container/world is recreated; failed attempt retained.",
         "min_robot_center_separation_m": 0.48,
         "min_wall_center_clearance_m": 0.24,
@@ -170,8 +175,13 @@ def main():
             timeout=900,
         )
     code = container(
-        "cd /work/ros2_ws && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release && source install/setup.bash && python3 /work/tests/sil/test_ros_service.py",
-        [],
+        'cd /work/ros2_ws && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release && source install/setup.bash && python3 /work/tests/sil/test_ros_service.py && python3 /work/tests/sil/test_lifecycle_recovery.py --out "$1" && python3 /work/tests/sil/test_lifecycle_baseline.py --out "$2" && python3 /work/tests/sil/test_lifecycle_recovery.py --manager-only --repeat 25 --out "$3" && python3 /work/tests/sil/test_readiness.py --out "$4"',
+        [
+            inside + "/lifecycle-tests",
+            inside + "/lifecycle-baseline",
+            inside + "/lifecycle-stress",
+            inside + "/readiness-tests",
+        ],
         out / "adapter-tests.log",
     )
     if code:
@@ -192,6 +202,8 @@ def main():
             "ros-jazzy-ros-gz",
             "ros-jazzy-gz-sim-vendor",
             "ros-jazzy-rosbag2-storage-mcap",
+            "ros-jazzy-rmw-fastrtps-shared-cpp",
+            "ros-jazzy-fastrtps",
         ],
         text=True,
     )
@@ -218,6 +230,14 @@ def main():
             ROOT
             / "ros2_ws/install/warehouse_fleet_ros/lib/warehouse_fleet_ros/allocator_node"
         ),
+        "lifecycle_manager_library_sha256": digest(
+            ROOT
+            / "ros2_ws/install/nav2_lifecycle_manager/lib/libnav2_lifecycle_manager_core.so"
+        ),
+        "lifecycle_manager_binary_sha256": digest(
+            ROOT
+            / "ros2_ws/install/nav2_lifecycle_manager/lib/nav2_lifecycle_manager/lifecycle_manager"
+        ),
     }
     (out / "environment.json").write_text(json.dumps(environment, indent=2) + "\n")
     results = []
@@ -238,7 +258,11 @@ def main():
             ],
             out / (name + ".log"),
         )
-        if run_code and startup_retryable(out / name):
+        if (
+            run_code
+            and fault != "lifecycle_reply_loss"
+            and startup_retryable(out / name)
+        ):
             failed_name = name + "-startup-1"
             (out / name).rename(out / failed_name)
             (out / (name + ".log")).rename(out / (failed_name + ".log"))

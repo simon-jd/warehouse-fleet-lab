@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "errors": [],
+  "robots": 3,
+  "fault": "lifecycle_reply_loss",
+  "seed": 41,
+  "completed_tasks": 3,
+  "mission_sim_seconds": 80.751,
+  "wall_seconds": 89.96964585599926,
+  "ground_truth_samples": 12303,
+  "max_ground_truth_gap_seconds": {
+    "1": 0.036000000000001364,
+    "2": 0.036000000000001364,
+    "3": 0.036000000000001364
+  },
+  "path_length_meters": {
+    "1": 7.913044690326919,
+    "2": 6.208761098697561,
+    "3": 7.942380385620352
+  },
+  "pair_samples": 24603,
+  "min_pair_distance_meters": 1.1454462042650948,
+  "chassis_contact_events": 0,
+  "min_center_to_wall_meters": 0.689940079668246,
+  "max_delivery_error_meters": 0.21754990758904644,
+  "unauthorized_nonzero_commands": 0,
+  "fault_observations": {
+    "suppressed_real_configure_responses": 1,
+    "configure_requests_forwarded": 1,
+    "pre_mission_zero_commands": 383,
+    "state_reconciled_without_world_restart": true
+  },
+  "bag_message_count": 130576
+}

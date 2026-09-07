@@ -17,7 +17,9 @@ from rclpy.action import ActionClient
 from rclpy.clock import Clock, ClockType
 from rclpy.node import Node
 from rclpy.qos import DurabilityPolicy, QoSProfile, ReliabilityPolicy
+from readiness import readiness_round
 from std_msgs.msg import String
+from std_srvs.srv import Trigger
 from warehouse_fleet_ros.srv import AllocateTasks
 from world import DELIVERIES, STARTS, cell
 
@@ -42,6 +44,7 @@ class Coordinator(Node):
         self.permits = {}
         self.injectors = {}
         self.lifecycle = {}
+        self.managers = {}
         self.timer = self.create_timer(
             0.08, self.heartbeat, clock=Clock(clock_type=ClockType.STEADY_TIME)
         )
@@ -79,6 +82,10 @@ class Coordinator(Node):
             ):
                 self.lifecycle[robot, name] = self.create_client(
                     GetState, ns + "/" + name + "/get_state"
+                )
+            for name in ["localization", "navigation"]:
+                self.managers[robot, name] = self.create_client(
+                    Trigger, ns + "/lifecycle_manager_" + name + "/is_active"
                 )
 
     def now(self):
@@ -144,6 +151,7 @@ class Coordinator(Node):
         )
 
     def ready(self, robot, timeout=90):
+        self.enabled = False
         end = time.monotonic() + timeout
         self.wait(
             lambda: (
@@ -159,14 +167,22 @@ class Coordinator(Node):
             clients = [
                 client for (r, _), client in self.lifecycle.items() if r == robot
             ]
-            active = all(client.service_is_ready() for client in clients)
-            if active:
-                futures = [client.call_async(GetState.Request()) for client in clients]
-                states = [
-                    self.future(future, 5, "lifecycle response").current_state.id
-                    for future in futures
-                ]
-                active = all(state == 3 for state in states)
+            managers = [
+                client for (r, _), client in self.managers.items() if r == robot
+            ]
+            queries = [
+                (
+                    client,
+                    GetState.Request(),
+                    lambda response: response.current_state.id == 3,
+                )
+                for client in clients
+            ]
+            queries += [
+                (client, Trigger.Request(), lambda response: response.success)
+                for client in managers
+            ]
+            active = readiness_round(self, queries, min(1.0, end - time.monotonic()))
             stable_rounds = (
                 stable_rounds + 1 if active and self.sensors_ready(robot) else 0
             )

@@ -1,7 +1,9 @@
+Starting >>> nav2_lifecycle_manager
 Starting >>> warehouse_fleet_ros
-Finished <<< warehouse_fleet_ros [0.32s]
+Finished <<< nav2_lifecycle_manager [0.13s]
+Finished <<< warehouse_fleet_ros [0.29s]
 
-Summary: 1 package finished [0.41s]
+Summary: 2 packages finished [0.36s]
 {
   "passed": true,
   "cases": [
@@ -39,3 +41,126 @@ Summary: 1 package finished [0.41s]
     }
   ]
 }
+nominal: PASS
+drop_after_apply: PASS
+drop_before_apply: PASS
+late_apply: PASS
+apply_after_deadline: PASS
+late_reply: PASS
+rejected: PASS
+false_success: PASS
+get_silent: PASS
+first_get_lost: PASS
+absent: PASS
+already_target: PASS
+invalid_initial: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+Original Nav2 missing-response hang reproduced with executed transition.
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+manager_nominal: PASS
+manager_drop_after_apply: PASS
+manager_drop_before_apply: PASS
+manager_absent: PASS
+[WARN] [1788753386.436919126] [readiness_regression]: Readiness response deadline expired; pending calls discarded
+[WARN] [1788753387.110371099] [readiness_regression]: Readiness response deadline expired; pending calls discarded
+[WARN] [1788753388.110836528] [readiness_regression]: Readiness response deadline expired; pending calls discarded
+[WARN] [1788753389.111518101] [readiness_regression]: Readiness response deadline expired; pending calls discarded
+Three real-DDS readiness retry/cleanup/inactive-manager cases passed.

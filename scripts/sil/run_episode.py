@@ -173,7 +173,13 @@ def main():
     parser.add_argument("--robots", type=int, choices=[1, 3], required=True)
     parser.add_argument(
         "--fault",
-        choices=["none", "scan_delay", "actuator_hold", "nav_restart"],
+        choices=[
+            "none",
+            "scan_delay",
+            "actuator_hold",
+            "nav_restart",
+            "lifecycle_reply_loss",
+        ],
         default="none",
     )
     parser.add_argument("--seed", type=int, default=41)
@@ -197,6 +203,8 @@ def main():
             f"robots:={args.robots}",
             f"run_dir:={out / 'generated'}",
             f"seed:={args.seed}",
+            "lifecycle_fault:="
+            + ("reply_loss" if args.fault == "lifecycle_reply_loss" else "none"),
         ],
         stdout=launch_log,
         stderr=subprocess.STDOUT,
@@ -211,7 +219,11 @@ def main():
         "passed": False,
     }
     rclpy.init()
-    node = Coordinator(args.robots, args.fault, event_sink)
+    node = Coordinator(
+        args.robots,
+        "none" if args.fault == "lifecycle_reply_loss" else args.fault,
+        event_sink,
+    )
     recorder = Recorder(node, out, args.robots)
     try:
 

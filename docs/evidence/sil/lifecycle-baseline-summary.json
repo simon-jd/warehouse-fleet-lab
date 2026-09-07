@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "baseline_nominal",
+      "observed_timeout": false,
+      "limit_seconds": 5,
+      "mutations": [
+        {
+          "transition": 1,
+          "state": 2
+        }
+      ],
+      "expected_behavior_observed": true
+    },
+    {
+      "case": "baseline_drop_after_apply",
+      "observed_timeout": true,
+      "limit_seconds": 5,
+      "mutations": [
+        {
+          "transition": 1,
+          "state": 2
+        }
+      ],
+      "expected_behavior_observed": true
+    }
+  ]
+}

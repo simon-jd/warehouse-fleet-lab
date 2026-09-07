@@ -25,6 +25,11 @@
       "controller-restart",
       3,
       "nav_restart"
+    ],
+    [
+      "lifecycle-reply-loss",
+      3,
+      "lifecycle_reply_loss"
     ]
   ],
   "execution": "sequential, isolated Docker PID/network/Gazebo partitions",
@@ -35,6 +40,10 @@
   "goal_attempts": 3,
   "episode_wall_timeout_seconds": 900,
   "startup_attempts_per_case": 2,
+  "lifecycle_reply_loss_startup_attempts": 1,
+  "lifecycle_rpc_timeout_wall_seconds": 1,
+  "lifecycle_transition_timeout_wall_seconds": 15,
+  "lifecycle_mutations_per_transition_attempt": 1,
   "startup_retry_condition": "Readiness timeout before mission start; no ownership and zero recorded final velocity. Entire isolated container/world is recreated; failed attempt retained.",
   "min_robot_center_separation_m": 0.48,
   "min_wall_center_clearance_m": 0.24,

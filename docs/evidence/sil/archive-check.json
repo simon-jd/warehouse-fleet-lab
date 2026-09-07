@@ -1,7 +1,11 @@
 {
   "passed": true,
-  "verified_episodes": 5,
+  "verified_episodes": 6,
   "positive_control_replayed": true,
+  "lifecycle_regression_cases_checked": 17,
+  "readiness_retry_cases_checked": 3,
+  "lifecycle_manager_process_trials_checked": 100,
+  "original_nav2_hang_control_checked": true,
   "retained_startup_failures_replayed": 0,
   "archive_and_source_hashes": "matched"
 }
