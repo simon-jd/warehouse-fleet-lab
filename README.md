@@ -1,5 +1,21 @@
 # Warehouse Fleet Autonomy Lab
 
+## Experience Bank results
+
+The results below are the owner-confirmed results from a separate cloud-hosted test environment, synchronized from the Experience Bank. The experiments retain the local, synthetic, simulator, CPU, Docker and single-host boundaries stated in each result; cloud hosting does not imply production deployment. This repository refresh does not represent a rerun of those measurements. Earlier dated evidence below remains tied to its own source, configuration and denominator.
+
+1. Implemented a C++20 pickup-and-delivery fleet simulator with time-expanded A* (at most 5,000 expansions per call) and reservation tables that check same-time vertex occupancy and reverse-edge conflicts; evaluated at 10/30/50 robots on 3 maps of 40×40 cells, seeds 1–10, 300 ticks per run, for 90 configurations.
+
+2. Ran 3 main policies plus a zero-lambda ablation over those 90 configurations (360 discrete runs) and counted 3,240,000 robot steps as (10+30+50) × 3 × 10 × 4 × 300 with waits counted as steps; an independent Python checker read every step trajectory and vertex/reverse-edge conflicts came out at a mean of 0, while finite-priority planning can still deadlock or leave tasks unfinished.
+
+3. Built a 65-case regression set (37 native, 8 allocation DDS, 17 lifecycle DDS, 3 readiness) plus 4 manager scenarios × 25 repetitions = 100 executions that add no new distinct cases, and injected allocator reply loss, lifecycle reply loss, permit interruption and navigation task cancel reply delay into SIL.
+
+4. Ran six fixed-seed-41 SIL scenarios with at most 3 robots at a 1 ms physics step (2D lidar 720 beams/360° at 10 Hz, 0.12–12 m; wheel odometry 50 Hz; AMCL): two normal scenarios (1 robot/1 task; 3 robots/3 tasks) and four fault scenarios (3 robots × 3 tasks = 12 tasks), 16 tasks total; all 16 reached their final state, robots stopped before recovering after permit loss, and the minimum observed center distance was 1.08 m.
+
+5. Handled unknown lifecycle outcomes with a 2 s steady-clock RPC deadline, a state re-query to confirm the actual transition result, retained task and resource ownership while the result stayed unknown, and a 500 ms motion permit expiry — grid reservations are coordination, never treated as a braking guarantee.
+
+See the [implementation and reproduction map](docs/experience-bank-alignment.md) for per-result source/tests, reproduction commands and limitations.
+
 A C++20 planning simulator with a ROS 2 / Gazebo execution adapter. The discrete benchmark asks: **does congestion-aware task allocation improve warehouse throughput when the planner and task stream stay fixed?** It models pickup→delivery tasks, concurrent grid motion and bounded reservation planning, with independent collision checks and reproducible experiments.
 
 ![Paired allocator comparison](docs/assets/comparison.png)

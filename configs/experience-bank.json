@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "split": "experience_bank",
+  "maps": [
+    "open",
+    "narrow",
+    "cross"
+  ],
+  "agents": [
+    10,
+    30,
+    50
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "strategies": [
+    "nearest",
+    "distance",
+    "congestion",
+    "congestion_zero"
+  ],
+  "ticks": 300,
+  "horizon": 64,
+  "max_expansions": 5000,
+  "deadline_us": 0,
+  "arrival_interval": 1,
+  "max_pending": 400,
+  "congestion_window": 16,
+  "lambda": 2.0,
+  "no_progress_ticks": 50,
+  "notes": "Experience Bank protocol: 90 inputs x 4 policies, 300 ticks; supplied cloud measurements remain separate from this rerun."
+}

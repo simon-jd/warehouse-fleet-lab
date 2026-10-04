@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-04T04:18:23.140139+00:00",
+  "provenance": "Owner-confirmed cloud results remain separate from these local checks.",
+  "notes": [
+    "Native CTest suite passed; new bank protocol seeds 1\u201310 / 5000 maximum expansions passed 360/360 independently checked discrete runs. SIL campaign not rerun."
+  ],
+  "checks": [
+    {
+      "command": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j4 && ctest --test-dir build --output-on-failure",
+      "exit_code": 0,
+      "elapsed_seconds": 8.95,
+      "log_sha256": "fa5d9d1ea284684ab6c15b1b2340fa2af6564f5dbc9230ebbfdcddc308d76cdb"
+    },
+    {
+      "command": "python3 benchmarks/run.py --config configs/experience-bank.json --out runs/alignment-20261004 --workers 4",
+      "exit_code": 0,
+      "log_sha256": "e9c64870c8de3ff1dbcad5e4b32519fa12b595d720f7f07209a816a2edb74811"
+    }
+  ]
+}
